@@ -71,9 +71,14 @@ function cloudPayload() {
   return { site: state.site, articles: computeCloudArticles(), ticker: state.ticker, videos: state.videos, team: state.team };
 }
 
-function saveState() {
+// Returns true (cloud push succeeded), false (cloud configured but the
+// push failed — e.g. bad credentials, oversized payload), or null (no
+// cloud configured, saved locally only) — callers use this to show an
+// honest status instead of always claiming success.
+async function saveState() {
   localStorage.setItem('sc_state', JSON.stringify(state));
-  if (hasCloud()) cloudWrite(cloudPayload());
+  if (!hasCloud()) return null;
+  return await cloudWrite(cloudPayload());
 }
 
 async function loadInitial() {
@@ -317,7 +322,7 @@ function fillSiteForm() {
   document.getElementById('sc-footTagline').value = s.footTagline;
   document.getElementById('sc-footBottomName').value = s.footBottomName;
 }
-function saveSite() {
+async function saveSite() {
   var s = state.site;
   s.heroTitle = document.getElementById('sc-heroTitle').value.trim();
   s.heroSub = document.getElementById('sc-heroSub').value.trim();
@@ -329,8 +334,8 @@ function saveSite() {
   s.alertHref = document.getElementById('sc-alertHref').value.trim();
   s.footTagline = document.getElementById('sc-footTagline').value.trim();
   s.footBottomName = document.getElementById('sc-footBottomName').value.trim();
-  saveState();
-  showMsg('sc-msg', '✅ Saved' + (hasCloud() ? ' & pushed to site!' : ' locally — connect Cloud & Login to sync live.'), true);
+  var pushed = await saveState();
+  showMsg('sc-msg', pushed === false ? '⚠️ Saved locally, but the cloud push failed — check your Bin ID/API key in Cloud & Login.' : '✅ Saved' + (pushed ? ' & pushed to site!' : ' locally — connect Cloud & Login to sync live.'), pushed !== false);
 }
 
 // ── Socials ───────────────────────────────────────────
@@ -347,7 +352,7 @@ function fillSocialsForm() {
   document.getElementById('soc-contact').value = state.site.contactEmail || '';
   document.getElementById('soc-nlAction').value = state.site.newsletterFormAction || '';
 }
-function saveSocials() {
+async function saveSocials() {
   var socials = {};
   SOCIAL_PLATFORMS.forEach(function (p) {
     var urlEl = document.getElementById('soc-' + p + '-url');
@@ -357,8 +362,8 @@ function saveSocials() {
   state.site.socials = socials;
   state.site.contactEmail = document.getElementById('soc-contact').value.trim();
   state.site.newsletterFormAction = document.getElementById('soc-nlAction').value.trim();
-  saveState();
-  showMsg('soc-msg', '✅ Saved' + (hasCloud() ? ' & pushed to site!' : ' locally.'), true);
+  var pushed = await saveState();
+  showMsg('soc-msg', pushed === false ? '⚠️ Saved locally, but the cloud push failed — check your Bin ID/API key in Cloud & Login.' : '✅ Saved' + (pushed ? ' & pushed to site!' : ' locally.'), pushed !== false);
 }
 
 // ── Monetization (Google AdSense) ──────────────────────
@@ -372,16 +377,16 @@ function updateMonetizationStatus() {
   if (state.site.adsenseClientId) { dot.className = 'sdot sdot-green'; lbl.textContent = 'Ads are on — Auto Ads enabled, ads.txt generated on the next build.'; }
   else { dot.className = 'sdot sdot-amber'; lbl.textContent = 'Ads are off — no publisher ID set yet.'; }
 }
-function saveMonetization() {
+async function saveMonetization() {
   var id = document.getElementById('mon-adsenseClientId').value.trim();
   if (id && !/^ca-pub-\d+$/.test(id)) {
     showMsg('mon-msg', 'That doesn\'t look like a Publisher ID — it should look like ca-pub-1234567890123456.', false);
     return;
   }
   state.site.adsenseClientId = id;
-  saveState();
+  var pushed = await saveState();
   updateMonetizationStatus();
-  showMsg('mon-msg', '✅ Saved' + (hasCloud() ? ' & pushed to site! Run a rebuild to bake ads.txt and the script tag into the static pages.' : ' locally — connect Cloud & Login to sync live.'), true);
+  showMsg('mon-msg', pushed === false ? '⚠️ Saved locally, but the cloud push failed — check your Bin ID/API key in Cloud & Login.' : '✅ Saved' + (pushed ? ' & pushed to site! Run a rebuild to bake ads.txt and the script tag into the static pages.' : ' locally — connect Cloud & Login to sync live.'), pushed !== false);
 }
 
 // ── Cloud settings ────────────────────────────────────
