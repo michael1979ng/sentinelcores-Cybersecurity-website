@@ -97,7 +97,7 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
-{id:"toyota-data-breach-240gb-leaked",section:"news",category:"data-breaches",
+{id:"toyota-data-breach-240gb-leaked",section:"news",category:"data-breaches",image:"/assets/images/articles/toyota-data-breach-240gb-leaked.jpg",
  date:"2024-08-24T14:00:00Z",author:"SentinelCores Desk",
  title:"TOYOTA Data Breach – Hackers Group Leaked 240 GB of Sensitive Data Online",
  dek:"The US subsidiaries of Toyota Motor Corporation reportedly fell victim to a massive data theft, with around 240GB of confidential information illegally leaked by the hacker group ZeroSevenGroup.",
@@ -121,7 +121,7 @@ Cybersecurity experts stress the importance of taking immediate action to limit 
 
 Toyota has yet to issue an official statement on the data theft. However, stakeholders and the public await further updates from the company and relevant authorities on the scope of the data theft and the steps required to address it.`},
 
-{id:"rfid-hardware-backdoor-hotel-access-cards",section:"news",category:"vulnerabilities",
+{id:"rfid-hardware-backdoor-hotel-access-cards",section:"news",category:"vulnerabilities",image:"/assets/images/articles/rfid-hardware-backdoor-hotel-access-cards.webp",
  date:"2024-08-24T10:00:00Z",author:"SentinelCores Desk",
  title:"Vulnerability Alert: Hardware Backdoor Discovered in RFID Access Cards Used in Hotels and Offices",
  dek:"Cybersecurity researchers revealed a hardware backdoor in MIFARE Classic contactless cards that lets an attacker bypass user-defined keys and clone hotel and office access cards in minutes.",
@@ -145,7 +145,7 @@ Adding to the urgency, a similar backdoor has been found in the earlier model, F
 
 Consumers are urged to verify their vulnerability, particularly considering these cards are extensively used in hotels across the U.S., Europe, and India. This incident is not an isolated case; prior security flaws have been identified in hotel lock systems, including significant vulnerabilities discovered in Dormakaba's Saflok electronic RFID locks.`},
 
-{id:"att-data-breach-73-million-customers",section:"news",category:"data-breaches",
+{id:"att-data-breach-73-million-customers",section:"news",category:"data-breaches",image:"/assets/images/articles/att-data-breach-73-million-customers.webp",
  date:"2024-04-07T09:00:00Z",author:"SentinelCores Desk",
  title:"AT&T Data Breach: 73 Million Customers' Information Leaked, Company Confirms",
  dek:"AT&T confirmed a data breach impacting 73 million current and former customers after weeks of denial, and reset security passcodes for 7.6 million accounts.",
@@ -167,7 +167,7 @@ The security advisory page revealed that passcodes for 7.6 million AT&T customer
 
 AT&T asserts that the data appears to be from 2019 or earlier and does not include personal financial information or call records. AT&T customers can also use Have I Been Pwned to determine if their data was compromised in this breach.`},
 
-{id:"dc-voter-records-ransomvc-deep-dive",section:"analysis",category:"incident-analysis",
+{id:"dc-voter-records-ransomvc-deep-dive",section:"analysis",category:"incident-analysis",image:"/assets/images/articles/dc-voter-records-ransomvc-deep-dive.png",
  date:"2024-03-02T17:00:00Z",author:"SentinelCores Desk",
  title:"D.C. Voter Records Compromised by RansomVC: A Deep Dive",
  dek:"The hacking group RansomVC claimed responsibility for infiltrating roughly 600,000 lines of U.S. voter data, including D.C. voter records, by exploiting a third-party vendor's web server.",
@@ -187,7 +187,7 @@ The breach encompasses voter records spanning from August 9, 2019, to January 25
 
 Despite the ongoing investigation, D.C. residents can still register to vote without compromising their personal information — officials have confirmed that online, paper, and in-person registration all remain secure and unaffected.`},
 
-{id:"caesars-entertainment-cyberattack-6tb",section:"news",category:"ransomware",
+{id:"caesars-entertainment-cyberattack-6tb",section:"news",category:"ransomware",image:"/assets/images/articles/caesars-entertainment-cyberattack-6tb.jpg",
  date:"2024-03-02T16:30:00Z",author:"SentinelCores Desk",
  title:"Caesars Entertainment Cyberattack Exposes 6TB of Stolen Data",
  dek:"Caesars Entertainment reportedly paid hackers linked to the Scattered Spider group after they breached an external IT vendor and stole loyalty-program members' driver's licenses and Social Security numbers.",
@@ -201,7 +201,7 @@ The hacking group allegedly responsible for this attack is known as Scattered Sp
 
 The attackers successfully obtained sensitive data from Caesars' loyalty program members, including driver's licenses and social security numbers, as confirmed by the company in their regulatory filing. Caesars has stated that they have taken measures to ensure that unauthorized actors delete the stolen data, although they cannot provide a guarantee of this outcome.`},
 
-{id:"alphv-blackcat-mgm-resorts-breach",section:"news",category:"ransomware",
+{id:"alphv-blackcat-mgm-resorts-breach",section:"news",category:"ransomware",image:"/assets/images/articles/alphv-blackcat-mgm-resorts-breach.jpg",
  date:"2024-03-02T16:00:00Z",author:"SentinelCores Desk",
  title:"ALPHV/BlackCat Hackers: MGM Resorts Breach Unveiled – Compromised in Mere 10 Minutes",
  dek:"The ALPHV/BlackCat ransomware group says a single 10-minute phone call to MGM Resorts' help desk was enough to compromise the company, disrupting slot machines, room keys, and reservations.",
@@ -219,7 +219,7 @@ The ALPHV ransomware group is known in the cybersecurity community for its exper
 
 MGM Resorts confirmed the cyber incident, acknowledging that it impacted various systems across its suite of casinos. Customer reports suggested issues with reservations, ATM usage, certain games, and mobile key entry into hotel rooms. MGM Resorts has since provided an update announcing that its dining, entertainment, and gaming facilities are fully operational.`},
 
-{id:"rhysida-prince-georges-county-schools",section:"news",category:"ransomware",
+{id:"rhysida-prince-georges-county-schools",section:"news",category:"ransomware",image:"/assets/images/articles/rhysida-prince-georges-county-schools.jpg",
  date:"2024-03-02T15:30:00Z",author:"SentinelCores Desk",
  title:"Rhysida Ransomware Group Claims Responsibility for Prince George's County School Cyberattack",
  dek:"The Rhysida ransomware group listed Maryland's Prince George's County Public Schools on its dark-web leak site, auctioning stolen passports, driver's licenses, and other records for 15 Bitcoin.",
@@ -239,7 +239,7 @@ PGCPS stated: "Prince George's County Public Schools, with the assistance of cyb
 
 This relatively lesser-known threat actor has been active since late May, per US government officials. Earlier the same week, Rhysida claimed responsibility for a crippling attack on the California-based healthcare conglomerate Prospect Medical Holdings, forcing several hospitals to suspend services. Rhysida is believed to have connections to the Vice Society ransomware gang, notorious for its attacks on the education sector.`},
 
-{id:"us-government-agencies-moveit-cyberattack",section:"news",category:"vulnerabilities",
+{id:"us-government-agencies-moveit-cyberattack",section:"news",category:"vulnerabilities",image:"/assets/images/articles/us-government-agencies-moveit-cyberattack.jpg",
  date:"2024-03-02T15:00:00Z",author:"SentinelCores Desk",
  title:"Exclusive: US Government Agencies Targeted in Global Cyberattack",
  dek:"Several US federal agencies, including the Department of Energy, were compromised through a vulnerability in the widely used MOVEit file-transfer software, in a campaign CISA attributes to the Clop ransomware gang.",
@@ -259,7 +259,7 @@ The Department of Energy is among the multiple federal agencies breached. The De
 
 The Clop ransomware group set a deadline for victims to contact them regarding ransom payment. As of Thursday morning, no US federal agencies were listed on the dark website. Instead, the hackers stated, "If you are a government, city, or police service, do not worry, we erased all your data. We have no interest in exposing such information."`},
 
-{id:"volt-typhoon-critical-infrastructure-backdoor",section:"news",category:"nation-state",
+{id:"volt-typhoon-critical-infrastructure-backdoor",section:"news",category:"nation-state",image:"/assets/images/articles/volt-typhoon-critical-infrastructure-backdoor.jpg",
  date:"2024-03-02T14:30:00Z",author:"SentinelCores Desk",
  title:"Chinese Hackers Unleash Unprecedented Tactics for Critical Infrastructure Attacks",
  dek:"CrowdStrike says the Chinese nation-state group Volt Typhoon (aka Vanguard Panda) has been trojanizing Apache Tomcat libraries to maintain stealthy, long-term access inside critical infrastructure targets.",
@@ -277,7 +277,7 @@ In one incident, Volt Typhoon exploited the Zoho ManageEngine ADSelfService Plus
 
 The exact method used to breach the environment remains unclear, but evidence suggests exploitation of CVE-2021-40539, a critical authentication bypass flaw. "The use of a backdoored Apache Tomcat library is a previously undisclosed persistence TTP in use by Vanguard Panda," stated CrowdStrike.`},
 
-{id:"proxyjacking-campaign-ssh-servers",section:"news",category:"malware",
+{id:"proxyjacking-campaign-ssh-servers",section:"news",category:"malware",image:"/assets/images/articles/proxyjacking-campaign-ssh-servers.jpg",
  date:"2024-03-02T14:00:00Z",author:"SentinelCores Desk",
  title:"Proxyjacking Campaign: Cybercriminals Targeting Vulnerable SSH Servers",
  dek:"Akamai researchers uncovered a campaign that hijacks vulnerable SSH servers and secretly enrolls them into peer-to-peer proxy networks like Peer2Profit, monetizing victims' spare bandwidth.",
@@ -293,7 +293,7 @@ In this campaign, attackers exploit SSH for remote access, running malicious scr
 
 The activity aims to breach vulnerable SSH servers and deploy an obfuscated Bash script that fetches dependencies from a compromised web server, terminates competing bandwidth-sharing programs, then launches Docker services that leverage the victim's bandwidth for financial gain. Investigation of the hosting web server also uncovered a cryptocurrency miner, indicating the threat actors run both cryptojacking and proxyjacking operations in parallel.`},
 
-{id:"african-nations-phishing-compromised-passwords-report",section:"news",category:"phishing",
+{id:"african-nations-phishing-compromised-passwords-report",section:"news",category:"phishing",image:"/assets/images/articles/african-nations-phishing-compromised-passwords-report.webp",
  date:"2024-03-02T13:30:00Z",author:"SentinelCores Desk",
  title:"African Nations Face Escalating Phishing & Compromised Password Cyberattacks: Report",
  dek:"A Liquid C2 report found cyberattacks on large enterprises in Kenya, South Africa, and Zambia surging in 2022, driven mainly by phishing and compromised passwords.",
@@ -309,7 +309,7 @@ According to a report by pan-African technology group Liquid C2, the primary met
 
 The Liquid C2 report highlights a growing gap of 100,000 certified cybersecurity professionals in Africa. Despite this, 68% of respondents stated that they had hired cybersecurity staff or enlisted the services of a cybersecurity team in the past year. "The persistence of attacks, despite increased staffing and cybersecurity investments, suggests that investing in cybersecurity measures alone does not guarantee protection," said Jess Parnell, VP of Security Operations at Centripetal.`},
 
-{id:"cisa-samsung-must-patch-spyware",section:"news",category:"vulnerabilities",
+{id:"cisa-samsung-must-patch-spyware",section:"news",category:"vulnerabilities",image:"/assets/images/articles/cisa-samsung-must-patch-spyware.jpg",
  date:"2024-03-02T13:00:00Z",author:"SentinelCores Desk",
  title:"CISA Adds Samsung Phone Flaws to 'Must Patch' List, Likely Exploited by Spyware Vendor",
  dek:"CISA added six Samsung mobile vulnerabilities and two D-Link flaws to its Known Exploited Vulnerabilities catalog, with evidence suggesting a commercial spyware vendor exploited the Samsung bugs.",
@@ -325,7 +325,7 @@ CISA updated its catalog with eight new vulnerabilities, including two in D-Link
 
 While there are no public reports of exploitation for the Samsung vulnerabilities added to CISA's list, it is highly likely a commercial spyware vendor has already taken advantage of them. In November 2022, Google disclosed three similar Samsung phone vulnerabilities exploited by an unnamed spyware vendor against Android devices — suggesting a pattern of the same vendor continuing to exploit related bugs.`},
 
-{id:"whatsapp-proxy-feature-internet-shutdowns",section:"guides",category:"privacy",
+{id:"whatsapp-proxy-feature-internet-shutdowns",section:"guides",category:"privacy",image:"/assets/images/articles/whatsapp-proxy-feature-internet-shutdowns.jpg",
  date:"2024-03-02T12:30:00Z",author:"SentinelCores Desk",
  title:"WhatsApp Enhances Proxy Feature to Counter Internet Shutdowns",
  dek:"Meta's WhatsApp expanded its proxy feature to support images, voice notes, files, stickers, and GIFs, plus shareable proxy links, helping users bypass government-imposed internet restrictions.",
@@ -338,7 +338,7 @@ The latest improvements include simplified setup steps, along with shareable lin
 
 "A proxy server acts as an intermediary gateway between WhatsApp and external servers," explained WhatsApp. Internet shutdowns have become increasingly prevalent worldwide — in 2022, authorities in 35 countries implemented internet shutdowns a total of 187 times, and India alone accounted for 84 of them.`},
 
-{id:"charming-kitten-powerstar-backdoor",section:"news",category:"nation-state",
+{id:"charming-kitten-powerstar-backdoor",section:"news",category:"nation-state",image:"/assets/images/articles/charming-kitten-powerstar-backdoor.jpg",
  date:"2024-03-02T12:00:00Z",author:"SentinelCores Desk",
  title:"Unveiling The Latest Iranian Hacker's Espionage Tactics: POWERSTAR Backdoor",
  dek:"Iran-linked Charming Kitten deployed an updated version of its POWERSTAR PowerShell backdoor with tighter operational security, decoupling the decryption method from its command-and-control server.",
@@ -354,7 +354,7 @@ The group is also recognized by multiple names, including APT35, Mint Sandstorm,
 
 The May 2023 attack wave utilizes an LNK file within a password-protected RAR archive to download the backdoor from Backblaze. "With POWERSTAR, Charming Kitten aimed to reduce the risk of malware exposure, analysis, and detection by delivering the decryption method separately from the initial code without writing it to disk," the researchers noted. POWERSTAR can execute PowerShell and C# commands remotely, establish persistence, and download additional modules.`},
 
-{id:"apple-patches-operation-triangulation-zero-days",section:"news",category:"vulnerabilities",
+{id:"apple-patches-operation-triangulation-zero-days",section:"news",category:"vulnerabilities",image:"/assets/images/articles/apple-patches-operation-triangulation-zero-days.jpg",
  date:"2024-03-02T11:30:00Z",author:"SentinelCores Desk",
  title:"Apple Releases Security Patches for Actively Exploited Flaws in iOS, macOS, and Safari",
  dek:"Apple patched a set of actively exploited zero-days, including two tied to the Operation Triangulation spyware campaign discovered by Kaspersky, across iOS, iPadOS, macOS, watchOS, and Safari.",
@@ -374,7 +374,7 @@ Kaspersky analyzed the spyware implant used in this zero-click attack campaign t
 
 With these fixes, Apple has addressed nine zero-day vulnerabilities in its products since the beginning of the year.`},
 
-{id:"asus-router-firmware-critical-vulnerabilities",section:"news",category:"vulnerabilities",
+{id:"asus-router-firmware-critical-vulnerabilities",section:"news",category:"vulnerabilities",image:"/assets/images/articles/asus-router-firmware-critical-vulnerabilities.jpg",
  date:"2024-03-02T11:00:00Z",author:"SentinelCores Desk",
  title:"Asus Issues Urgent Firmware Updates to Address WiFi Router Vulnerabilities",
  dek:"Asus released firmware updates fixing at least nine security defects across its router lines, including a 9.8-severity remote code execution flaw, and urged users to disable WAN-facing services.",
@@ -388,7 +388,7 @@ Asus identified at least nine security defects that could lead to code execution
 
 Affected routers include the Asus GT6, GT-AXE16000, GT-AX11000 PRO, and numerous others. Asus advises users to disable WAN-accessible services including remote access, port forwarding, DDNS, VPN server, and DMZ, and to update to the latest firmware.`},
 
-{id:"multistorm-phishing-campaign-rats",section:"news",category:"phishing",
+{id:"multistorm-phishing-campaign-rats",section:"news",category:"phishing",image:"/assets/images/articles/multistorm-phishing-campaign-rats.jpg",
  date:"2024-03-02T10:30:00Z",author:"SentinelCores Desk",
  title:"MULTI#STORM Campaign: Phishing Attacks Deploy Remote Access Trojans in India and the U.S.",
  dek:"Securonix researchers detailed MULTI#STORM, a phishing campaign that uses password-protected ZIP files and obfuscated JavaScript to deploy Warzone RAT and Quasar RAT on victim machines.",
@@ -404,7 +404,7 @@ The attack begins with an email containing a link to a password-protected ZIP fi
 
 The final stage deploys Warzone RAT (also known as Ave Maria), providing extensive capabilities for data exfiltration and downloading additional malware such as Quasar RAT. Users should avoid directly executing JavaScript files and remain cautious of shortcut files using double extensions.`},
 
-{id:"gravityrat-android-bingechat-whatsapp",section:"news",category:"malware",
+{id:"gravityrat-android-bingechat-whatsapp",section:"news",category:"malware",image:"/assets/images/articles/gravityrat-android-bingechat-whatsapp.jpg",
  date:"2024-03-02T10:00:00Z",author:"SentinelCores Desk",
  title:"New Version of Android GravityRAT Steals WhatsApp Backup Files",
  dek:"ESET tied an updated GravityRAT campaign to a group dubbed SpaceCobra, distributed via the trojanized BingeChat and Chatico messaging apps, which exfiltrate WhatsApp backups and steal documents.",
@@ -420,7 +420,7 @@ The malicious BingeChat app masquerades as a modified version of OMEMO IM, an au
 
 The latest GravityRAT exfiltrates WhatsApp backups, deletes contacts, erases call logs, and steals media and document files in various formats. Exfiltrated data is stored in text files and transmitted to a command-and-control server before being removed from the device.`},
 
-{id:"microsoft-outlook-azure-ddos-storm-1359",section:"news",category:"ddos",
+{id:"microsoft-outlook-azure-ddos-storm-1359",section:"news",category:"ddos",image:"/assets/images/articles/microsoft-outlook-azure-ddos-storm-1359.jpg",
  date:"2024-03-02T09:30:00Z",author:"SentinelCores Desk",
  title:"Microsoft Confirms Cyberattacks Caused Disruptions to Outlook and Cloud Platform in Early June",
  dek:"Microsoft confirmed that early-June outages affecting Outlook, OneDrive, and Azure were caused by Layer 7 DDoS attacks from a hacktivist group it tracks as Storm-1359, also known as Anonymous Sudan.",
@@ -436,7 +436,7 @@ The attackers, also known as Anonymous Sudan, likely utilized rented cloud infra
 
 Disruptions were first reported June 5, peaking at 18,000 outage reports on Downdetector, affecting Outlook, Teams, SharePoint Online, and OneDrive for Business before spreading to Azure. The incident underscores the persistent risk DDoS attacks pose even to major cloud providers.`},
 
-{id:"cl-sta-0043-middle-east-africa-espionage",section:"news",category:"nation-state",
+{id:"cl-sta-0043-middle-east-africa-espionage",section:"news",category:"nation-state",image:"/assets/images/articles/cl-sta-0043-middle-east-africa-espionage.jpg",
  date:"2024-03-02T09:00:00Z",author:"SentinelCores Desk",
  title:"Advanced Cyber-Espionage Campaign Targets Middle Eastern and African Governments",
  dek:"Palo Alto Networks tracked a state-backed campaign, CL-STA-0043, using Exchange and IIS server vulnerabilities plus novel credential-theft techniques to exfiltrate emails from governments across the Middle East and Africa.",
