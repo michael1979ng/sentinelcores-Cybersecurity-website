@@ -321,12 +321,24 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif}
         <div class="panel" id="panel-socials">
           <div class="panel-title">Social &amp; Newsletter</div>
           <div class="card"><div class="card-body">
-            <div class="form-row cols2"><div class="field2"><label>X / Twitter URL</label><input id="soc-twitter"></div><div class="field2"><label>LinkedIn URL</label><input id="soc-linkedin"></div></div>
-            <div class="form-row cols2"><div class="field2"><label>RSS feed URL</label><input id="soc-rss"></div><div class="field2"><label>Contact email</label><input id="soc-contact"></div></div>
-            <div class="field2"><label>Newsletter form action URL</label><input id="soc-nlAction" placeholder="https://formspree.io/f/xxxx"></div>
-            <p style="font-size:11.5px;color:var(--gr);margin-top:6px">A static site has no server to store subscribers — point this at Formspree, Mailchimp, ConvertKit, Buttondown, or any provider that accepts a plain HTML form POST.</p>
+            <h4 style="margin-bottom:10px">Follow Us widget &amp; footer links</h4>
+            <p style="font-size:11.5px;color:var(--gr);margin-bottom:14px">Enter each platform's public profile URL and the handle/name to display. Leave a platform's URL blank to hide it — it won't appear in the Follow widget or footer. This only stores public profile links, never passwords: the site can't verify a real login on your behalf, and this data is readable by anyone via the public API, so no account credentials belong here.</p>
+            <div class="form-row cols2"><div class="field2"><label>X / Twitter — profile URL</label><input id="soc-twitter-url" placeholder="https://x.com/yourhandle"></div><div class="field2"><label>X / Twitter — handle</label><input id="soc-twitter-handle" placeholder="@yourhandle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>Facebook — page URL</label><input id="soc-facebook-url" placeholder="https://facebook.com/yourpage"></div><div class="field2"><label>Facebook — display name</label><input id="soc-facebook-handle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>LinkedIn — page URL</label><input id="soc-linkedin-url"></div><div class="field2"><label>LinkedIn — display name</label><input id="soc-linkedin-handle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>Instagram — profile URL</label><input id="soc-instagram-url"></div><div class="field2"><label>Instagram — handle</label><input id="soc-instagram-handle" placeholder="@yourhandle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>YouTube — channel URL</label><input id="soc-youtube-url"></div><div class="field2"><label>YouTube — channel name</label><input id="soc-youtube-handle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>Telegram — channel URL</label><input id="soc-telegram-url"></div><div class="field2"><label>Telegram — display name</label><input id="soc-telegram-handle"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>Mastodon — profile URL</label><input id="soc-mastodon-url"></div><div class="field2"><label>Mastodon — handle</label><input id="soc-mastodon-handle" placeholder="@you@instance.social"></div></div>
+            <div class="form-row cols2"><div class="field2"><label>RSS feed URL</label><input id="soc-rss-url"></div><div class="field2"><label>RSS — display name</label><input id="soc-rss-handle" placeholder="RSS Feed"></div></div>
             <button class="btn btn-teal" onclick="saveSocials()" style="margin-top:14px">Save</button>
             <div class="msg" id="soc-msg"></div>
+          </div></div>
+          <div class="card"><div class="card-body">
+            <div class="field2"><label>Contact email</label><input id="soc-contact"></div>
+            <div class="field2" style="margin-top:10px"><label>Newsletter form action URL</label><input id="soc-nlAction" placeholder="https://formspree.io/f/xxxx"></div>
+            <p style="font-size:11.5px;color:var(--gr);margin-top:6px">A static site has no server to store subscribers — point this at Formspree, Mailchimp, ConvertKit, Buttondown, or any provider that accepts a plain HTML form POST.</p>
+            <button class="btn btn-teal" onclick="saveSocials()" style="margin-top:14px">Save</button>
           </div></div>
         </div>
 

@@ -25,9 +25,14 @@ function defaultSite() {
     // no cookie disclosure in the privacy policy.
     adsenseClientId: "",
     socials: {
-      twitter: { url: "https://twitter.com/securexplore", handle: "X / Twitter" },
-      linkedin: { url: "", handle: "LinkedIn" },
-      rss: { url: "", handle: "RSS" }
+      twitter: { url: "https://twitter.com/securexplore", handle: "@securexplore" },
+      facebook: { url: "", handle: "" },
+      linkedin: { url: "", handle: "" },
+      instagram: { url: "", handle: "" },
+      youtube: { url: "", handle: "" },
+      telegram: { url: "", handle: "" },
+      mastodon: { url: "", handle: "" },
+      rss: { url: "", handle: "RSS Feed" }
     }
   };
 }

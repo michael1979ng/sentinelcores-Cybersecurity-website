@@ -253,13 +253,48 @@
     var html = list.map(function (t) { return '<span class="ti">' + esc(t) + '</span>'; }).join('');
     return html + html;
   }
+  // Platform metadata used by both the footer link list and the sidebar
+  // Follow widget, so a platform only has to be defined once. Emoji icons
+  // match this site's existing convention (side-titles, alert bar, etc.)
+  // rather than pulling in an SVG icon set for one small widget.
+  var SOCIAL_META = {
+    twitter: { icon: '𝕏', label: 'X / Twitter' },
+    facebook: { icon: '📘', label: 'Facebook' },
+    linkedin: { icon: '💼', label: 'LinkedIn' },
+    instagram: { icon: '📷', label: 'Instagram' },
+    youtube: { icon: '▶️', label: 'YouTube' },
+    telegram: { icon: '✈️', label: 'Telegram' },
+    mastodon: { icon: '🐘', label: 'Mastodon' },
+    rss: { icon: '📡', label: 'RSS' }
+  };
+  function socialEntries(socials) {
+    return Object.keys(socials || {}).map(function (k) {
+      var s = socials[k] || {};
+      var meta = SOCIAL_META[k] || { icon: '🔗', label: k };
+      return { key: k, url: s.url, handle: s.handle || meta.label, icon: meta.icon };
+    }).filter(function (e) { return e.url; });
+  }
   function footerSocialsHtml(socials) {
+    var entries = socialEntries(socials);
     var html = '<h4>Connect</h4>';
-    Object.keys(socials || {}).forEach(function (k) {
-      var s = socials[k];
-      if (s && s.url) html += '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.handle) + '</a>';
+    entries.forEach(function (e) {
+      html += '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + e.icon + ' ' + esc(e.handle) + '</a>';
     });
     return html;
+  }
+  // Sidebar "Follow Us" widget — one clickable pill per configured
+  // platform, icon + handle, linking straight out to the profile.
+  // Renders an empty-state note (rather than nothing) when no platform
+  // has been configured yet, so an editor sees why the widget is blank.
+  function followWidgetHtml(socials) {
+    var entries = socialEntries(socials);
+    if (!entries.length) return '<p class="empty-note">Add your social links in the admin Social panel.</p>';
+    return '<div class="follow-list">' + entries.map(function (e) {
+      return '<a class="follow-item" href="' + esc(e.url) + '" target="_blank" rel="noopener">' +
+        '<span class="follow-icon">' + e.icon + '</span>' +
+        '<span class="follow-handle">' + esc(e.handle) + '</span>' +
+        '</a>';
+    }).join('') + '</div>';
   }
 
   // ── Google AdSense ───────────────────────────────────────
@@ -410,7 +445,7 @@
     takeawaysHtml: takeawaysHtml, shareBarHtml: shareBarHtml, articleReaderHtml: articleReaderHtml, relatedFor: relatedFor,
     filterChipsHtml: filterChipsHtml, threatCategories: threatCategories, threatFilterChipsHtml: threatFilterChipsHtml,
     videoCardHtml: videoCardHtml, videoGridHtml: videoGridHtml, teamCardHtml: teamCardHtml, teamGridHtml: teamGridHtml,
-    computedStatBoxesHtml: computedStatBoxesHtml, tickerHtml: tickerHtml, footerSocialsHtml: footerSocialsHtml,
+    computedStatBoxesHtml: computedStatBoxesHtml, tickerHtml: tickerHtml, footerSocialsHtml: footerSocialsHtml, followWidgetHtml: followWidgetHtml,
     SITE_URL: SITE_URL, SITE_NAME: SITE_NAME, DEFAULT_OG_IMAGE: DEFAULT_OG_IMAGE, absUrl: absUrl, ogImageFor: ogImageFor,
     metaTagsHtml: metaTagsHtml, orgSchema: orgSchema, websiteSchema: websiteSchema, authorSchema: authorSchema,
     personSchema: personSchema, breadcrumbSchema: breadcrumbSchema, newsArticleSchema: newsArticleSchema, jsonLdHtml: jsonLdHtml,

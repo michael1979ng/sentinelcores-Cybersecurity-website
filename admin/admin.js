@@ -304,20 +304,27 @@ function saveSite() {
 }
 
 // ── Socials ───────────────────────────────────────────
+var SOCIAL_PLATFORMS = ['twitter', 'facebook', 'linkedin', 'instagram', 'youtube', 'telegram', 'mastodon', 'rss'];
 function fillSocialsForm() {
   var s = state.site.socials || {};
-  document.getElementById('soc-twitter').value = (s.twitter && s.twitter.url) || '';
-  document.getElementById('soc-linkedin').value = (s.linkedin && s.linkedin.url) || '';
-  document.getElementById('soc-rss').value = (s.rss && s.rss.url) || '';
+  SOCIAL_PLATFORMS.forEach(function (p) {
+    var entry = s[p] || {};
+    var urlEl = document.getElementById('soc-' + p + '-url');
+    var handleEl = document.getElementById('soc-' + p + '-handle');
+    if (urlEl) urlEl.value = entry.url || '';
+    if (handleEl) handleEl.value = entry.handle || '';
+  });
   document.getElementById('soc-contact').value = state.site.contactEmail || '';
   document.getElementById('soc-nlAction').value = state.site.newsletterFormAction || '';
 }
 function saveSocials() {
-  state.site.socials = {
-    twitter: { url: document.getElementById('soc-twitter').value.trim(), handle: 'X / Twitter' },
-    linkedin: { url: document.getElementById('soc-linkedin').value.trim(), handle: 'LinkedIn' },
-    rss: { url: document.getElementById('soc-rss').value.trim(), handle: 'RSS' }
-  };
+  var socials = {};
+  SOCIAL_PLATFORMS.forEach(function (p) {
+    var urlEl = document.getElementById('soc-' + p + '-url');
+    var handleEl = document.getElementById('soc-' + p + '-handle');
+    socials[p] = { url: (urlEl && urlEl.value.trim()) || '', handle: (handleEl && handleEl.value.trim()) || '' };
+  });
+  state.site.socials = socials;
   state.site.contactEmail = document.getElementById('soc-contact').value.trim();
   state.site.newsletterFormAction = document.getElementById('soc-nlAction').value.trim();
   saveState();
