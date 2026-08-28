@@ -64,9 +64,20 @@ async function fetchCloudState() {
 
 // Mirrors the client's applyState() merge rules exactly, so the
 // build-time bake and the first client render agree.
+// The cloud bin only ever holds NEW or edited articles (kept under
+// JSONBin's free 100KB cap this way) — the other 40 stay baked in from
+// SEED_ARTICLES. Cloud entries are merged on top by id: a matching id
+// overrides the seed article in place, an unmatched id is appended.
+function mergeArticles(seedArticles, cloudArticles) {
+  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  const byId = new Map(seedArticles.map((a) => [a.id, a]));
+  cloudArticles.forEach((a) => byId.set(a.id, a));
+  return Array.from(byId.values());
+}
+
 function buildState(cloudState) {
   const site = Object.assign({}, seed.defaultSite(), (cloudState && cloudState.site) || {});
-  const articles = cloudState && cloudState.articles && cloudState.articles.length ? cloudState.articles : seed.SEED_ARTICLES;
+  const articles = mergeArticles(seed.SEED_ARTICLES, cloudState && cloudState.articles);
   const ticker = cloudState && cloudState.ticker && cloudState.ticker.length ? cloudState.ticker : seed.SEED_TICKER;
   const videos = cloudState && cloudState.videos ? cloudState.videos : seed.SEED_VIDEOS;
   const team = cloudState && cloudState.team && cloudState.team.length ? cloudState.team : seed.SEED_TEAM;

@@ -546,10 +546,20 @@ if (BIN_ID.indexOf('__SENTINELCORES') === 0) BIN_ID = '';
 // ═══════════════════════════════════════════════════════════
 var state = { site: defaultSite(), articles: SEED_ARTICLES.slice(), ticker: SEED_TICKER.slice(), videos: SEED_VIDEOS.slice(), team: SEED_TEAM.slice() };
 
+// Mirrors scripts/build.js's mergeArticles — the cloud bin only ever
+// holds new/edited articles (keeps it under JSONBin's free 100KB cap),
+// merged on top of SEED_ARTICLES by id here on the client too.
+function mergeArticles(seedArticles, cloudArticles) {
+  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  var byId = {}, order = [];
+  seedArticles.forEach(function (a) { byId[a.id] = a; order.push(a.id); });
+  cloudArticles.forEach(function (a) { if (!(a.id in byId)) order.push(a.id); byId[a.id] = a; });
+  return order.map(function (id) { return byId[id]; });
+}
 function applyState(data) {
   if (!data || typeof data !== 'object') return;
   if (data.site) state.site = Object.assign({}, defaultSite(), data.site);
-  if (data.articles && data.articles.length) state.articles = data.articles;
+  state.articles = mergeArticles(SEED_ARTICLES, data.articles);
   if (data.ticker && data.ticker.length) state.ticker = data.ticker;
   if (data.videos) state.videos = data.videos;
   if (data.team && data.team.length) state.team = data.team;

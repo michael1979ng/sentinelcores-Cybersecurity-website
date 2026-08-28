@@ -46,15 +46,45 @@ function updateCloudStatus() {
 // starts from the same real content already live, not an empty slate.
 var state = { site: defaultSite(), articles: SEED_ARTICLES.slice(), ticker: SEED_TICKER.slice(), videos: SEED_VIDEOS.slice(), team: SEED_TEAM.slice() };
 
+// The cloud bin only ever holds NEW or edited articles — not all 40 —
+// to stay under JSONBin's free 100KB cap. The other articles keep
+// coming from SEED_ARTICLES (baked in at build time). These two
+// helpers mirror scripts/build.js's mergeArticles / index.html's
+// client-side copy: merge cloud articles onto seed by id when reading,
+// and compute just the delta (new or changed vs. seed) when writing.
+function mergeArticles(seedArticles, cloudArticles) {
+  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  var byId = {}, order = [];
+  seedArticles.forEach(function (a) { byId[a.id] = a; order.push(a.id); });
+  cloudArticles.forEach(function (a) { if (!(a.id in byId)) order.push(a.id); byId[a.id] = a; });
+  return order.map(function (id) { return byId[id]; });
+}
+function computeCloudArticles() {
+  var seedById = {};
+  SEED_ARTICLES.forEach(function (a) { seedById[a.id] = a; });
+  return state.articles.filter(function (a) {
+    var seedA = seedById[a.id];
+    return !seedA || JSON.stringify(a) !== JSON.stringify(seedA);
+  });
+}
+function cloudPayload() {
+  return { site: state.site, articles: computeCloudArticles(), ticker: state.ticker, videos: state.videos, team: state.team };
+}
+
 function saveState() {
   localStorage.setItem('sc_state', JSON.stringify(state));
-  if (hasCloud()) cloudWrite(state);
+  if (hasCloud()) cloudWrite(cloudPayload());
 }
 
 async function loadInitial() {
   var cloud = await cloudRead();
-  if (cloud) { Object.assign(state, cloud); state.site = Object.assign(defaultSite(), cloud.site || {}); }
-  else {
+  if (cloud) {
+    state.site = Object.assign(defaultSite(), cloud.site || {});
+    state.articles = mergeArticles(SEED_ARTICLES, cloud.articles);
+    if (cloud.ticker && cloud.ticker.length) state.ticker = cloud.ticker;
+    if (cloud.videos) state.videos = cloud.videos;
+    if (cloud.team && cloud.team.length) state.team = cloud.team;
+  } else {
     try {
       var local = JSON.parse(localStorage.getItem('sc_state') || 'null');
       if (local) { Object.assign(state, local); state.site = Object.assign(defaultSite(), local.site || {}); }
@@ -369,7 +399,7 @@ function saveCloudSettings() {
 }
 async function pushAllToCloud() {
   if (!hasCloud()) { showMsg('cloud-msg', 'Connect a Bin ID and API Key first.', false); return; }
-  var ok = await cloudWrite(state);
+  var ok = await cloudWrite(cloudPayload());
   showMsg('cloud-msg', ok ? '✅ Pushed current data to the cloud.' : 'Push failed — check your Bin ID/API key.', ok);
 }
 
