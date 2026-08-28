@@ -23,7 +23,7 @@ function defaultSite() {
     // once in the admin's Monetization panel after AdSense approval.
     // Blank means ads stay fully off: no script tag, no ads.txt line,
     // no cookie disclosure in the privacy policy.
-    adsenseClientId: "",
+    adsenseClientId: "ca-pub-8388193608953143",
     socials: {
       twitter: { url: "https://twitter.com/securexplore", handle: "@securexplore" },
       facebook: { url: "", handle: "" },
