@@ -461,7 +461,7 @@ The threat actors leverage Mimikatz for credential theft and execute a malicious
 // company newsrooms). No hero images generated yet — `image` left blank
 // so the generated icon/gradient card renders (see README); real images
 // can be added once AI image generation is authenticated.
-{id:"jaguar-land-rover-cyberattack-production-shutdown",section:"news",category:"ransomware",
+{id:"jaguar-land-rover-cyberattack-production-shutdown",section:"news",category:"ransomware",image:"/assets/images/articles/jaguar-land-rover-cyberattack-production-shutdown.jpg",
  date:"2025-09-02T12:00:00Z",author:"SentinelCores Desk",
  title:"Jaguar Land Rover Cyberattack Halts Global Production for Five Weeks, Costing Britain an Estimated £1.9 Billion",
  dek:"A late-August 2025 intrusion forced Jaguar Land Rover to shut down manufacturing across the UK, Slovakia, Brazil and India, becoming what officials call the most costly cyberattack in British history.",
@@ -509,7 +509,7 @@ For manufacturers and other organizations that depend on tightly integrated supp
 
 As of the most recent public updates, JLR has not disclosed a definitive attribution for the September attack, and the investigation into both the Scattered Lapsus$ Hunters claim and the competing Russian-attribution reporting remains unresolved in public reporting.`},
 
-{id:"allianz-life-data-breach-salesforce-social-engineering",section:"news",category:"data-breaches",
+{id:"allianz-life-data-breach-salesforce-social-engineering",section:"news",category:"data-breaches",image:"/assets/images/articles/allianz-life-data-breach-salesforce-social-engineering.jpg",
  date:"2025-07-26T12:00:00Z",author:"SentinelCores Desk",
  title:"Allianz Life Discloses Breach Affecting Nearly 1.5 Million Customers After Social-Engineering Attack on Salesforce CRM",
  dek:"Attackers linked to Scattered Spider and ShinyHunters used social engineering to access a third-party Salesforce database, exposing names, Social Security numbers and other personal data.",
@@ -564,7 +564,7 @@ Security researchers who reviewed the incident afterward pointed to broader less
 
 Allianz Life's experience became one of the most closely watched cases in the 2025 Salesforce breach wave both for the volume of Social Security numbers involved and for illustrating how a single compromised employee interaction — rather than a technical exploit — can expose data belonging to well over a million people.`},
 
-{id:"google-salesforce-shinyhunters-breach",section:"news",category:"data-breaches",
+{id:"google-salesforce-shinyhunters-breach",section:"news",category:"data-breaches",image:"/assets/images/articles/google-salesforce-shinyhunters-breach.jpg",
  date:"2025-08-05T12:00:00Z",author:"SentinelCores Desk",
  title:"Google Confirms Corporate Salesforce Instance Breached by ShinyHunters in Voice-Phishing Attack",
  dek:"A ShinyHunters vishing campaign tricked a Google employee into authorizing a modified Salesforce data-loader tool, exposing business contact information tied to small and mid-size customers.",
@@ -614,7 +614,7 @@ Because Google was simultaneously a victim and one of the security industry's mo
 
 The Google incident became one of the most closely scrutinized cases in the 2025 Salesforce breach wave precisely because of the company's own visibility into threat intelligence — its dual role as victim and investigator gave the security community an unusually detailed public account of how the ShinyHunters campaign operated across dozens of other organizations that were less forthcoming about technical specifics.`},
 
-{id:"qantas-airways-data-breach-third-party-platform",section:"news",category:"data-breaches",
+{id:"qantas-airways-data-breach-third-party-platform",section:"news",category:"data-breaches",image:"/assets/images/articles/qantas-airways-data-breach-third-party-platform.jpg",
  date:"2025-07-02T12:00:00Z",author:"SentinelCores Desk",
  title:"Qantas Confirms Data Breach Affecting 5.7 Million Customers After Third-Party Platform Compromise",
  dek:"Australia's largest airline said attackers accessed a third-party contact-center system holding customer service records, then attempted to extort the company after the theft.",
@@ -670,7 +670,7 @@ Steps Qantas took and recommended included:
 
 The Qantas incident became one of the more prominent examples cited by security researchers when discussing the risks of granting third-party vendors and contact-center platforms broad access to customer data. Because the vulnerability sat in a vendor's system rather than Qantas's own infrastructure, the case underscored a recurring theme across the 2025 breach landscape: attackers increasingly target the weakest link in a company's vendor and supply chain, using social engineering against people rather than attempting to break through hardened perimeter defenses directly. Qantas said it undertook a broader review of third-party platform access and vendor security requirements as part of its remediation following the incident.`},
 
-{id:"sk-telecom-usim-data-breach-south-korea",section:"news",category:"data-breaches",
+{id:"sk-telecom-usim-data-breach-south-korea",section:"news",category:"data-breaches",image:"/assets/images/articles/sk-telecom-usim-data-breach-south-korea.jpg",
  date:"2025-04-22T12:00:00Z",author:"SentinelCores Desk",
  title:"SK Telecom Malware Breach Exposed SIM Data on Millions of South Korean Subscribers, Undetected for Years",
  dek:"South Korea's largest mobile carrier disclosed that malware had been siphoning USIM authentication data since 2022, later drawing a record $97 million regulatory fine.",
@@ -723,7 +723,7 @@ Security researchers and South Korean officials pointed to several broader lesso
 
 The SK Telecom case remained one of the most significant telecom breaches globally in the period, both for the multi-year duration of the undetected malware presence and for the size of the resulting regulatory penalty.`},
 
-{id:"ssa-doge-numident-cloud-exposure",section:"news",category:"data-breaches",
+{id:"ssa-doge-numident-cloud-exposure",section:"news",category:"data-breaches",image:"/assets/images/articles/ssa-doge-numident-cloud-exposure.jpg",
  date:"2025-08-26T12:00:00Z",author:"SentinelCores Desk",
  title:"Whistleblower Says DOGE Copied Social Security's Master Database to an Unsecured Cloud Server",
  dek:"SSA's own chief data officer alleged that Department of Government Efficiency staff uploaded a live copy of the Numident database, covering more than 300 million Americans, to an insecure cloud environment outside normal oversight.",
@@ -767,7 +767,7 @@ Most breaches covered by security news outlets involve an external attacker defe
 
 That framing has not reduced the intensity of scrutiny. Privacy law experts and former federal chief information security officers who have commented publicly on the episode have noted that Numident's role as a root identity source makes it categorically different from a typical commercial customer database: it effectively underpins identity verification across much of the federal government and large parts of the private financial and healthcare sectors that rely on Social Security number validation. A sustained lack of clarity about who could access the copied database, and whether it was ever exposed on the open internet even briefly, is precisely the kind of unresolved question that keeps this story classified as an active, developing security incident rather than a closed one.`},
 
-{id:"panera-bread-shinyhunters-vishing-breach",section:"news",category:"data-breaches",
+{id:"panera-bread-shinyhunters-vishing-breach",section:"news",category:"data-breaches",image:"/assets/images/articles/panera-bread-shinyhunters-vishing-breach.jpg",
  date:"2026-01-28T12:00:00Z",author:"SentinelCores Desk",
  title:"Panera Bread Confirms Breach After ShinyHunters Leaks Millions of Customer Records",
  dek:"The extortion group ShinyHunters published stolen Panera Bread customer data after the chain reportedly declined to pay, exposing roughly 5.1 million accounts following a voice-phishing attack on an employee's single sign-on credentials.",
@@ -812,7 +812,7 @@ Security researchers who covered the Panera breach pointed to it as a further ex
 
 That dynamic played out visibly in the Panera case: the company's systems continued operating normally throughout the incident, restaurants stayed open, and online ordering was not reported as disrupted at any point. The damage was entirely on the data-privacy side, a pattern likely to keep recurring as attackers refine vishing-based intrusion techniques that require no malware deployment and leave a comparatively light forensic footprint until the data actually surfaces publicly.`},
 
-{id:"match-group-shinyhunters-okta-appsflyer-breach",section:"news",category:"data-breaches",
+{id:"match-group-shinyhunters-okta-appsflyer-breach",section:"news",category:"data-breaches",image:"/assets/images/articles/match-group-shinyhunters-okta-appsflyer-breach.jpg",
  date:"2026-01-29T12:00:00Z",author:"SentinelCores Desk",
  title:"Match Group Confirms Breach as ShinyHunters Claims 10 Million Records From Tinder, Hinge, and OkCupid",
  dek:"The extortion group ShinyHunters said it stole millions of records tied to Match Group's dating apps after a voice-phishing attack on an employee's Okta credentials led to a third-party marketing platform.",
@@ -857,7 +857,7 @@ Data exposures at dating platforms tend to draw scrutiny beyond the typical brea
 
 The incident also renewed attention on the security posture of third-party marketing and analytics vendors like AppsFlyer, which many consumer apps rely on for attribution and engagement tracking. Because such platforms are typically granted broad access to user-level data to support advertising and product analytics, a single compromised employee credential at the primary company can cascade into exposure of data held by several connected vendors — a systemic risk that extends well beyond Match Group's own infrastructure and applies broadly across the mobile app ecosystem.`},
 
-{id:"coupang-insider-breach-33-million-accounts",section:"news",category:"data-breaches",
+{id:"coupang-insider-breach-33-million-accounts",section:"news",category:"data-breaches",image:"/assets/images/articles/coupang-insider-breach-33-million-accounts.jpg",
  date:"2025-12-01T12:00:00Z",author:"SentinelCores Desk",
  title:"Coupang Data Breach Traced to Ex-Employee's Unrevoked Access Keys Exposes 33 Million Accounts",
  dek:"South Korea's e-commerce giant Coupang disclosed that a former employee used cryptographic signing keys that were never revoked after his departure to access personal data on roughly 33.7 million customer accounts.",
@@ -902,7 +902,7 @@ Given that Coupang is often described as South Korea's answer to Amazon, with a 
 
 The case has also fed into broader conversations among South Korean lawmakers and regulators about tightening data-protection enforcement for large e-commerce and technology platforms, with some officials citing the Coupang case directly when discussing potential increases to statutory penalties for companies that fail to secure customer data. For security teams elsewhere, the episode has become a frequently cited cautionary example in credential-lifecycle-management discussions, illustrating how a single overlooked offboarding step can outweigh investment in more visible security measures like firewalls or intrusion detection systems.`},
 
-{id:"transunion-shinyhunters-salesloft-breach",section:"news",category:"data-breaches",
+{id:"transunion-shinyhunters-salesloft-breach",section:"news",category:"data-breaches",image:"/assets/images/articles/transunion-shinyhunters-salesloft-breach.jpg",
  date:"2025-08-28T12:00:00Z",author:"SentinelCores Desk",
  title:"TransUnion Breach Tied to Salesforce-Linked App Exposes Data on 4.4 Million Consumers",
  dek:"Credit bureau TransUnion disclosed that hackers linked to ShinyHunters stole Social Security numbers and other personal data from a third-party application connected to its Salesforce environment, affecting roughly 4.46 million U.S. consumers.",
@@ -949,7 +949,7 @@ Breaches at consumer-facing retailers or apps typically leave affected individua
 
 Consumer advocacy groups that commented on the TransUnion incident argued it reinforces the case for tighter regulatory requirements around how credit bureaus secure not just their core credit-file systems but also the broader web of third-party support tools, CRM platforms, and vendor integrations that sit adjacent to that core data — since, as this breach demonstrated, attackers do not need to breach the "crown jewel" system directly when a connected support application holds comparably sensitive personal identifiers like Social Security numbers.`},
 
-{id:"kyushu-electric-power-ssd-data-loss-2026",section:"news",category:"data-breaches",
+{id:"kyushu-electric-power-ssd-data-loss-2026",section:"news",category:"data-breaches",image:"/assets/images/articles/kyushu-electric-power-ssd-data-loss-2026.jpg",
  date:"2026-06-08T12:00:00Z",author:"SentinelCores Desk",
  title:"Kyushu Electric Power Subsidiary Loses Unencrypted Drive Holding 10.9 Million Customer Records",
  dek:"A contractor for Kyuden Transmission and Distribution misplaced an unencrypted, password-free SSD holding data on nearly 11 million customers, in what may be Japan's largest personal data incident on record.",
@@ -993,7 +993,7 @@ In the aftermath, the company has faced scrutiny over its data-handling procedur
 
 While the incident lacks the technical sophistication of a nation-state intrusion or a ransomware campaign, it illustrates a persistent truth in data security: some of the most damaging breaches originate not from advanced attackers but from basic lapses in physical security and data-handling discipline. For a company managing critical energy infrastructure and the personal data of millions of customers, the absence of encryption on a portable backup device represents a fundamental control failure that regulators and customers alike are likely to scrutinize closely in the months ahead.`},
 
-{id:"st-paul-minnesota-interlock-ransomware-2025",section:"news",category:"ransomware",
+{id:"st-paul-minnesota-interlock-ransomware-2025",section:"news",category:"ransomware",image:"/assets/images/articles/st-paul-minnesota-interlock-ransomware-2025.jpg",
  date:"2025-08-11T12:00:00Z",author:"SentinelCores Desk",
  title:"Interlock Ransomware Cripples City of St. Paul, Prompts Rare National Guard Cyber Deployment",
  dek:"A July 2025 ransomware attack by the Interlock gang forced St. Paul to shut down its network, declare a local emergency, and call in Minnesota's National Guard cyber unit for the first time in its history.",
@@ -1037,7 +1037,7 @@ The St. Paul incident became a widely cited case study for local government cybe
 
 St. Paul's experience has since been referenced by federal and state cybersecurity officials as an example of both the disruptive potential of ransomware against local governments with limited security budgets, and of a relatively well-coordinated multi-agency response once the crisis was underway.`},
 
-{id:"trust-wallet-shai-hulud-chrome-extension-heist-2025",section:"news",category:"malware",
+{id:"trust-wallet-shai-hulud-chrome-extension-heist-2025",section:"news",category:"malware",image:"/assets/images/articles/trust-wallet-shai-hulud-chrome-extension-heist-2025.jpg",
  date:"2025-12-26T12:00:00Z",author:"SentinelCores Desk",
  title:"Trust Wallet Chrome Extension Hijacked in Supply-Chain Attack, $8.5 Million Stolen",
  dek:"Attackers who compromised Trust Wallet's developer secrets through the Shai-Hulud npm worm published a malicious Chrome extension update that drained thousands of crypto wallets over the Christmas holiday.",
@@ -1081,7 +1081,7 @@ The incident prompted both immediate technical remediation and longer-term recom
 
 The Trust Wallet incident underscored a theme that has become increasingly common in software supply-chain security: attackers no longer need to breach a company's production infrastructure directly if they can instead compromise the developer tooling and open-source dependencies that feed into it.`},
 
-{id:"die-linke-qilin-ransomware-attack-2026",section:"news",category:"ransomware",
+{id:"die-linke-qilin-ransomware-attack-2026",section:"news",category:"ransomware",image:"/assets/images/articles/die-linke-qilin-ransomware-attack-2026.jpg",
  date:"2026-03-27T12:00:00Z",author:"SentinelCores Desk",
  title:"Qilin Ransomware Gang Hits German Political Party Die Linke, Threatens Data Leak",
  dek:"Russian-speaking ransomware group Qilin breached the IT systems of Germany's Die Linke party, prompting a criminal complaint and warnings that the intrusion may be part of a broader hybrid-warfare campaign.",
@@ -1125,7 +1125,7 @@ As of the most recent public reporting, Die Linke had not confirmed that a full-
 
 The incident adds to a growing list of European political organizations and civic institutions targeted by ransomware groups, raising ongoing questions for regulators and lawmakers about the cybersecurity posture of political parties, which often operate with more limited security budgets and staffing than large corporations or government agencies, despite holding data that can carry significant political sensitivity.`},
 
-{id:"poland-power-grid-cyberattack-december-2025",section:"news",category:"nation-state",
+{id:"poland-power-grid-cyberattack-december-2025",section:"news",category:"nation-state",image:"/assets/images/articles/poland-power-grid-cyberattack-december-2025.jpg",
  date:"2026-01-30T12:00:00Z",author:"SentinelCores Desk",
  title:"Russia-Linked Hackers Sabotage Polish Wind and Solar Farms in Coordinated Grid Attack",
  dek:"A wiper-malware campaign attributed to the Russian FSB-linked Dragonfly group struck more than 30 Polish renewable energy sites and a major heat-and-power plant during a December cold snap, prompting a CISA advisory.",
@@ -1171,7 +1171,7 @@ In the aftermath, Polish authorities and independent security researchers conver
 
 The Polish grid attack has since become a widely referenced case study in industrial cybersecurity circles, both as an example of the growing willingness of state-linked actors to target distributed renewable energy infrastructure, and as a reminder that even a technically ambitious, coordinated attack can be substantially blunted when core production and delivery systems retain resilience — while also underscoring how much room for improvement remains in securing the remote access layer that increasingly connects modern grid equipment to the internet.`},
 
-{id:"workday-data-breach-2025-shinyhunters-vishing",section:"news",category:"data-breaches",
+{id:"workday-data-breach-2025-shinyhunters-vishing",section:"news",category:"data-breaches",image:"/assets/images/articles/workday-data-breach-2025-shinyhunters-vishing.jpg",
  date:"2025-08-15T12:00:00Z",author:"SentinelCores Desk",
  title:"Workday Confirms Data Breach After Vishing Campaign Hits Its Salesforce Environment",
  dek:"HR software giant Workday says voice-phishing attackers linked to the ShinyHunters-affiliated group UNC6040 tricked an employee into exposing a third-party CRM instance, exposing business contact data.",
@@ -1217,7 +1217,7 @@ That distinction mattered for how customers were advised to respond. The vishing
 
 The back-to-back disclosures prompted renewed scrutiny of Salesforce's ecosystem of connected third-party applications, with several security vendors publishing guidance on auditing OAuth grants and rotating API tokens for any Salesforce-linked integration. Salesloft took its Drift product offline temporarily while it investigated the token theft, and Salesforce itself pushed guidance to customers about reviewing connected-app permissions. For Workday specifically, the episode became a widely cited case study in how even companies with mature internal security programs remain exposed through the CRM and support tooling their own employees rely on daily.`},
 
-{id:"f5-networks-nation-state-breach-bigip-source-code-2025",section:"news",category:"nation-state",
+{id:"f5-networks-nation-state-breach-bigip-source-code-2025",section:"news",category:"nation-state",image:"/assets/images/articles/f5-networks-nation-state-breach-bigip-source-code-2025.jpg",
  date:"2025-10-15T12:00:00Z",author:"SentinelCores Desk",
  title:"F5 Discloses Nation-State Breach That Stole BIG-IP Source Code and Unpatched Vulnerability Data",
  dek:"F5 Networks confirms a sophisticated state-linked actor had long-term, persistent access to internal systems, prompting an emergency federal directive to patch or disconnect BIG-IP devices.",
@@ -1259,7 +1259,7 @@ The roughly two-month gap between F5's internal discovery of the intrusion on Au
 
 Beyond CISA's mandate for federal agencies, F5 and independent security researchers urged every organization running BIG-IP, in government or the private sector, to treat the incident as a priority patching event. Recommended steps included applying F5's newly released security updates without delay, auditing management-interface exposure to ensure BIG-IP administrative access was not reachable from the public internet, rotating any credentials, API keys, or certificates that had been provisioned or renewed through F5-managed systems during the suspected intrusion window, and reviewing logs for unusual authentication or configuration-change activity tied to BIG-IP deployments. Given reports that the nation-state actor may have had access to F5's environment for an extended period before detection, researchers cautioned that additional undisclosed vulnerabilities beyond the initial patch round could still surface, and recommended organizations treat BIG-IP patching as an ongoing rather than one-time response through the following months.`},
 
-{id:"cisco-vishing-crm-breach-2025",section:"news",category:"data-breaches",
+{id:"cisco-vishing-crm-breach-2025",section:"news",category:"data-breaches",image:"/assets/images/articles/cisco-vishing-crm-breach-2025.jpg",
  date:"2025-08-05T12:00:00Z",author:"SentinelCores Desk",
  title:"Cisco Discloses Data Breach After Employee Falls for Voice Phishing Attack on Cisco.com CRM",
  dek:"Cisco confirms attackers used a vishing call to access a third-party CRM system tied to Cisco.com, exporting basic profile data as part of the broader ShinyHunters-linked Salesforce campaign.",
@@ -1303,7 +1303,7 @@ Cisco advised affected users to be alert for phishing or vishing attempts that m
 
 Cisco's disclosure landed within days of Google's own admission that a nearly identical vishing technique had been used against one of its Salesforce instances, and only weeks before Workday's separate but related disclosures. Taken together, the string of incidents at major technology vendors throughout mid-2025 demonstrated that the ShinyHunters-linked campaign was not opportunistic but methodically worked through a target list of large organizations running Salesforce-based CRM systems, applying the same core vishing playbook with only minor variations from company to company.`},
 
-{id:"adidas-third-party-vendor-breach-2025",section:"news",category:"data-breaches",
+{id:"adidas-third-party-vendor-breach-2025",section:"news",category:"data-breaches",image:"/assets/images/articles/adidas-third-party-vendor-breach-2025.jpg",
  date:"2025-05-23T12:00:00Z",author:"SentinelCores Desk",
  title:"Adidas Discloses Customer Data Breach Traced to Third-Party Customer Service Provider",
  dek:"Adidas confirms attackers compromised a vendor that handles customer service inquiries, exposing contact details of customers who had reached out to its help desk in several regions.",
@@ -1351,7 +1351,7 @@ Adidas's experience closely paralleled breaches disclosed around the same period
 
 Beyond the 2025 incident, Adidas has continued to face scrutiny over third-party data handling; a separate investigation into a further alleged third-party data exposure, reported in the months that followed, kept the company's vendor-security practices in the spotlight well after the original breach notifications went out. That continued attention reflects a broader pattern seen across the retail sector, where a single vendor compromise can generate follow-on disclosures and investigations extending well beyond the initial incident window.`},
 
-{id:"aflac-data-breach-scattered-spider-2025",section:"news",category:"data-breaches",
+{id:"aflac-data-breach-scattered-spider-2025",section:"news",category:"data-breaches",image:"/assets/images/articles/aflac-data-breach-scattered-spider-2025.jpg",
  date:"2025-06-20T12:00:00Z",author:"SentinelCores Desk",
  title:"Aflac Confirms Breach Exposing Data of 22.65 Million People in Scattered Spider-Linked Attack",
  dek:"Insurance giant Aflac says social engineering attackers accessed Social Security numbers, health records, and other sensitive data belonging to millions, part of a wider assault on the insurance sector.",
