@@ -90,12 +90,23 @@
       '<div class="threat-meter-bar">' + bar + '</div><div class="threat-meter-legend">' + legend + '</div></div>';
   }
 
-  function mdToHtml(md) {
+  // images: optional [{url, alt}] — a body block that is just
+  // "[IMAGE:1]" (1-indexed) on its own line renders as that inline
+  // figure instead of a paragraph. Lets an article body place extra
+  // photos/illustrations at chosen points, on top of the one hero
+  // image every article already supports via a.image.
+  function mdToHtml(md, images) {
     if (!md) return '';
     var blocks = String(md).split(/\n\s*\n/);
     return blocks.map(function (block) {
       var lines = block.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
       if (!lines.length) return '';
+      var imgMatch = lines.length === 1 && lines[0].match(/^\[IMAGE:(\d+)\]$/);
+      if (imgMatch && images && images[imgMatch[1] - 1]) {
+        var img = images[imgMatch[1] - 1];
+        return '<figure class="reader-inline-img"><img src="' + esc(img.url) + '" alt="' + esc(img.alt || '') + '">' +
+          (img.alt ? '<figcaption>' + esc(img.alt) + '</figcaption>' : '') + '</figure>';
+      }
       if (lines[0].indexOf('## ') === 0) return '<h3>' + inlineMd(lines[0].slice(3)) + '</h3>';
       if (lines.every(function (l) { return l.indexOf('- ') === 0; })) {
         return '<ul>' + lines.map(function (l) { return '<li>' + inlineMd(l.slice(2)) + '</li>'; }).join('') + '</ul>';
@@ -189,8 +200,8 @@
       takeawaysHtml(a.keyTakeaways) +
       '<div class="reader-meta"><span>' + esc(a.author) + '</span><span>' + fmtDate(a.date) + '</span><span>' + readingTime(a.body) + ' min read</span>' + statusTagHtml(a.status) + '</div>' +
       shareBarHtml(a.id) +
-      (a.image ? '<div class="reader-img"><img src="' + esc(a.image) + '" alt=""></div>' : '') +
-      '<div class="reader-content">' + mdToHtml(a.body) + '</div>' +
+      (a.image ? '<div class="reader-img"><img src="' + esc(a.image) + '" alt="' + esc(a.imageAlt || '') + '"></div>' : '') +
+      '<div class="reader-content">' + mdToHtml(a.body, a.images) + '</div>' +
       (a.sourceName ? '<div class="reader-source">Originally reported via ' + esc(a.sourceName) + '.</div>' : '') +
       (a.tags && a.tags.length ? '<div class="reader-tags">' + a.tags.map(function (t) { return '<span class="tag-pill">#' + esc(t) + '</span>'; }).join('') + '</div>' : '') +
       (related.length ? '<div class="related-sec"><h3>Related Coverage</h3><div class="feed-list">' + related.map(articleCardHtml).join('') + '</div></div>' : '');
@@ -332,7 +343,7 @@
     // Per-article images (once generated) have unknown dimensions, so
     // width/height are only emitted for the known default asset — both
     // are valid per the OG spec, which treats width/height as optional.
-    if (a && a.image) return { url: a.image };
+    if (a && a.image) return { url: /^https?:\/\//.test(a.image) ? a.image : absUrl(a.image) };
     return DEFAULT_OG_IMAGE;
   }
 
