@@ -204,6 +204,7 @@ header{background:var(--navy);position:sticky;top:0;z-index:1000;border-bottom:3
 .video-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .video-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px;color:#fff;background:rgba(15,36,56,.15)}
 .video-card h4{padding:14px;font-size:14px;font-weight:600;color:var(--navy);line-height:1.35}
+.video-sec{margin-top:44px;padding-top:8px}
 
 /* ── Category pill grid (News/Analysis/Guides listing) ─ */
 .listing-head{padding:44px 0 8px}
@@ -409,6 +410,14 @@ footer{background:var(--navy);margin-top:40px;padding:50px 0 24px}
         <div class="nl-note" id="nlNote"></div>
       </div>
     </aside>
+  </div>
+
+  <div class="wrap video-sec">
+    <div class="sec-head">
+      <div class="sec-title">🎥 Latest Videos</div>
+      <a class="btn-outline" href="/videos/" onclick="return navSection(event,'videos')">More Videos</a>
+    </div>
+    <div class="video-grid" id="homeVideos"></div>
   </div>
 </div>
 
@@ -634,7 +643,7 @@ function navArticle(e, slug) {
 function renderAll() {
   renderTicker(); renderStats(); renderAlert(); renderHero(); renderLatestFeed();
   renderTrending(); renderFollowWidget(); renderListing('news', 'newsGrid'); renderListing('analysis', 'analysisGrid');
-  renderListing('guides', 'guidesGrid'); renderVideos(); renderFooter();
+  renderListing('guides', 'guidesGrid'); renderVideos(); renderHomeVideos(); renderFooter();
   renderSectionFilters('news'); renderSectionFilters('analysis'); renderSectionFilters('guides');
   renderThreatFilters(); renderThreatsGrid(); initAdsense();
 }
@@ -725,6 +734,10 @@ function renderListing(section, elId, catFilter) {
 
 function renderVideos() {
   document.getElementById('videoGrid').innerHTML = videoGridHtml(state.videos);
+}
+
+function renderHomeVideos() {
+  document.getElementById('homeVideos').innerHTML = homeVideosHtml(state.videos);
 }
 
 function renderFooter() {

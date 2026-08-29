@@ -161,6 +161,7 @@ function renderRoute(baseHtml, route, state) {
   html = injectEmpty(html, '<div id="threatMeter"></div>', R.threatMeterHtml(arts));
   html = injectEmpty(html, '<div id="trendingList"></div>', R.trendingListHtml(arts));
   html = injectEmpty(html, '<div id="followWidget"></div>', R.followWidgetHtml(state.site.socials));
+  html = injectEmpty(html, '<div class="video-grid" id="homeVideos"></div>', R.homeVideosHtml(state.videos));
   html = html.replace(/<p id="footTagline">[\s\S]*?<\/p>/, '<p id="footTagline">' + R.esc(state.site.footTagline) + "</p>");
   html = html.replace(
     /<div class="foot-col" id="footSocials">[\s\S]*?<\/div>/,

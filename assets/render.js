@@ -227,6 +227,13 @@
   function videoGridHtml(videos) {
     return videos && videos.length ? videos.map(videoCardHtml).join('') : '<p class="empty-note">No videos added yet.</p>';
   }
+  // Homepage strip: newest 4 only. New videos are unshift()'d onto the
+  // front of state.videos when added in the admin, so the array is
+  // already newest-first — a 5th video simply falls off this slice
+  // without being removed from state, and stays reachable on /videos/.
+  function homeVideosHtml(videos) {
+    return videoGridHtml((videos || []).slice(0, 4));
+  }
   function teamCardHtml(m) {
     return '<div class="team-card"><h4>' + esc(m.name) + '</h4><div class="role">' + esc(m.role) + '</div><p>' + esc(m.bio) + '</p></div>';
   }
@@ -444,7 +451,7 @@
     trendItemHtml: trendItemHtml, trendingListHtml: trendingListHtml, heroFeatHtml: heroFeatHtml,
     takeawaysHtml: takeawaysHtml, shareBarHtml: shareBarHtml, articleReaderHtml: articleReaderHtml, relatedFor: relatedFor,
     filterChipsHtml: filterChipsHtml, threatCategories: threatCategories, threatFilterChipsHtml: threatFilterChipsHtml,
-    videoCardHtml: videoCardHtml, videoGridHtml: videoGridHtml, teamCardHtml: teamCardHtml, teamGridHtml: teamGridHtml,
+    videoCardHtml: videoCardHtml, videoGridHtml: videoGridHtml, homeVideosHtml: homeVideosHtml, teamCardHtml: teamCardHtml, teamGridHtml: teamGridHtml,
     computedStatBoxesHtml: computedStatBoxesHtml, tickerHtml: tickerHtml, footerSocialsHtml: footerSocialsHtml, followWidgetHtml: followWidgetHtml,
     SITE_URL: SITE_URL, SITE_NAME: SITE_NAME, DEFAULT_OG_IMAGE: DEFAULT_OG_IMAGE, absUrl: absUrl, ogImageFor: ogImageFor,
     metaTagsHtml: metaTagsHtml, orgSchema: orgSchema, websiteSchema: websiteSchema, authorSchema: authorSchema,
