@@ -322,7 +322,7 @@
   }
 
   // ── SEO: meta tags + JSON-LD structured data ────────────
-  var SITE_URL = 'https://sentinelcores.com';
+  var SITE_URL = 'https://sentinelcores.org';
   var SITE_NAME = 'SentinelCores';
   var DEFAULT_OG_IMAGE = { url: SITE_URL + '/assets/logo-full.jpg', width: 1408, height: 768 };
 
