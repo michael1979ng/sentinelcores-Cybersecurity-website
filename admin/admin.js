@@ -53,7 +53,11 @@ var state = { site: defaultSite(), articles: SEED_ARTICLES.slice(), ticker: SEED
 // client-side copy: merge cloud articles onto seed by id when reading,
 // and compute just the delta (new or changed vs. seed) when writing.
 function mergeArticles(seedArticles, cloudArticles) {
-  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  // Always return a fresh array, never seedArticles itself — otherwise
+  // state.articles ends up *aliasing* SEED_ARTICLES, and editing an
+  // article here silently mutates the "seed baseline" computeCloudArticles
+  // diffs against, so the diff always comes back empty and nothing syncs.
+  if (!cloudArticles || !cloudArticles.length) return seedArticles.slice();
   var byId = {}, order = [];
   seedArticles.forEach(function (a) { byId[a.id] = a; order.push(a.id); });
   cloudArticles.forEach(function (a) { if (!(a.id in byId)) order.push(a.id); byId[a.id] = a; });

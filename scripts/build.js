@@ -69,7 +69,7 @@ async function fetchCloudState() {
 // SEED_ARTICLES. Cloud entries are merged on top by id: a matching id
 // overrides the seed article in place, an unmatched id is appended.
 function mergeArticles(seedArticles, cloudArticles) {
-  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  if (!cloudArticles || !cloudArticles.length) return seedArticles.slice();
   const byId = new Map(seedArticles.map((a) => [a.id, a]));
   cloudArticles.forEach((a) => byId.set(a.id, a));
   return Array.from(byId.values());

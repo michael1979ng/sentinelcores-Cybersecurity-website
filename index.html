@@ -563,7 +563,7 @@ var state = { site: defaultSite(), articles: SEED_ARTICLES.slice(), ticker: SEED
 // holds new/edited articles (keeps it under JSONBin's free 100KB cap),
 // merged on top of SEED_ARTICLES by id here on the client too.
 function mergeArticles(seedArticles, cloudArticles) {
-  if (!cloudArticles || !cloudArticles.length) return seedArticles;
+  if (!cloudArticles || !cloudArticles.length) return seedArticles.slice();
   var byId = {}, order = [];
   seedArticles.forEach(function (a) { byId[a.id] = a; order.push(a.id); });
   cloudArticles.forEach(function (a) { if (!(a.id in byId)) order.push(a.id); byId[a.id] = a; });
