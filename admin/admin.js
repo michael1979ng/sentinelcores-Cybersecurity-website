@@ -222,16 +222,20 @@ function editArticle(id) {
   document.getElementById('art-draft').checked = !!a.draft;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function saveArticle() {
+async function saveArticle() {
   var title = document.getElementById('art-title').value.trim();
   if (!title) { showMsg('art-msg', 'Title is required.', false); return; }
   var editingId = document.getElementById('art-editing-id').value;
-  var data = {
+  // Start from the existing article (if editing) so fields with no form
+  // input — like the images[]/imageAlt inline-image data — survive a
+  // save instead of being silently dropped by a from-scratch rebuild.
+  var existing = editingId ? state.articles.find(function (a) { return a.id === editingId; }) : null;
+  var data = Object.assign({}, existing, {
     id: editingId || slugify(title) + '-' + uid().slice(-6),
     section: document.getElementById('art-section').value,
     category: slugify(document.getElementById('art-category').value || 'general'),
     author: document.getElementById('art-author').value.trim() || 'SentinelCores Desk',
-    date: editingId ? state.articles.find(function (a) { return a.id === editingId; }).date : new Date().toISOString(),
+    date: existing ? existing.date : new Date().toISOString(),
     title: title,
     severity: document.getElementById('art-severity').value,
     status: document.getElementById('art-status').value.trim(),
@@ -246,20 +250,22 @@ function saveArticle() {
     featured: document.getElementById('art-featured').checked,
     trending: document.getElementById('art-trending').checked,
     draft: document.getElementById('art-draft').checked
-  };
+  });
   if (editingId) {
     var idx = state.articles.findIndex(function (a) { return a.id === editingId; });
     state.articles[idx] = data;
   } else {
     state.articles.unshift(data);
   }
-  saveState(); renderArticleTable(); renderDash(); resetArticleForm();
-  showMsg('art-msg', '✅ Saved' + (hasCloud() ? ' & pushed to site!' : ' locally — connect Cloud & Login to sync live.'), true);
+  renderArticleTable(); renderDash(); resetArticleForm();
+  var pushed = await saveState();
+  showMsg('art-msg', pushed === false ? '⚠️ Saved locally, but the cloud push failed — check your Bin ID/API key in Cloud & Login.' : '✅ Saved' + (pushed ? ' & pushed to site!' : ' locally — connect Cloud & Login to sync live.'), pushed !== false);
 }
-function deleteArticle(id) {
+async function deleteArticle(id) {
   if (!confirm('Delete this article? This cannot be undone.')) return;
   state.articles = state.articles.filter(function (a) { return a.id !== id; });
-  saveState(); renderArticleTable(); renderDash();
+  renderArticleTable(); renderDash();
+  await saveState();
 }
 
 // ── Ticker ────────────────────────────────────────────
