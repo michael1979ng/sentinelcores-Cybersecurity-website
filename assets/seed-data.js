@@ -97,6 +97,57 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"mag-manchester-airports-breach-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/mag-manchester-airports-breach-2026-hero.jpg",
+ imageAlt:"Exterior view of Terminal 2 at Manchester Airport, one of three UK airports operated by Manchester Airports Group affected by the September 2026 data breach",
+ images:[
+   {url:"/assets/images/articles/mag-manchester-airports-breach-2026-logo.svg",alt:"Manchester Airports Group (MAG) logo, the operator of Manchester, London Stansted, and East Midlands airports",fit:"contain"},
+   {url:"/assets/images/articles/mag-manchester-airports-breach-2026-threat.jpg",alt:"Stock image of a hooded figure at a keyboard overlaid with binary code, representing the cybercriminal group behind the Manchester Airports Group data breach"}
+ ],
+ date:"2026-09-05T12:00:00Z",author:"SentinelCores Desk",
+ title:"Manchester Airports Group Data on 8.8 Million People Leaked After Ransom Refusal",
+ dek:"A group calling itself FulcrumSec published roughly 550GB of data stolen from Manchester Airports Group after the company refused to pay a ransom, exposing millions of travelers' contact details, booking records, and vehicle plates — after finding admin keys sitting in plain sight in the airports' own website code.",
+ excerpt:"FulcrumSec leaked ~550GB of data on 8.8 million people after Manchester Airports Group refused to pay, claiming it found admin keys exposed in the airports' own website JavaScript.",
+ tags:["Manchester Airports Group","MAG","FulcrumSec","Data Breach","Ransomware","Aviation","United Kingdom"],featured:true,trending:true,sourceName:"SecurityWeek, Infosecurity Magazine",
+ severity:"critical",status:"Under Investigation",
+ keyTakeaways:["Manchester Airports Group (MAG) disclosed a breach on August 27, 2026; after MAG refused to pay, threat group FulcrumSec published roughly 550GB of stolen data on September 2","The leak covers about 8.8 million people's email addresses and phone numbers, plus names, home postal regions, residential IP addresses, and over 100,000 UK vehicle registration plates","FulcrumSec claims it gained access using admin keys for a customer engagement platform that were left exposed in the frontend JavaScript of all three MAG airport websites — visible to any visitor who opened their browser's developer tools","Manchester, London Stansted, and East Midlands airports were all affected; MAG says core flight operations were never impacted","FulcrumSec's more extreme claims — including that leaked future bookings belonged to politicians and military personnel, and that it deleted the most sensitive records after the ransom was refused — are unverified and have not been confirmed by MAG"],
+ body:`Manchester Airports Group (MAG), the UK's largest airport operator, confirmed it was investigating a cybersecurity incident on August 27, 2026. Six days later, on September 2, a threat group calling itself FulcrumSec published roughly 550GB of data it said it had stolen from MAG, after the company declined to pay a ransom demand. The leak affects an estimated 8.8 million people who had used services at Manchester, London Stansted, or East Midlands airports — the three airports MAG owns and operates.
+
+[IMAGE:1]
+
+## How FulcrumSec says it got in
+
+According to FulcrumSec's own claims, the group didn't need to breach any firewall or exploit a software vulnerability to get started. It says it found live administrator API keys for Iterable, a third-party customer engagement and email marketing platform MAG uses, sitting directly inside the public, unminified frontend JavaScript served on the root domains of all three airport websites. In the group's own words, posted alongside the leaked data: any of the millions of visitors to the sites could have right-clicked "inspect" in their browser and seen the keys themselves, without needing to search subdomains or run any specialized scanning tools.
+
+If accurate, that means the initial access point wasn't a sophisticated exploit at all — it was a basic secrets-management failure: a live, working credential checked into code that ships to every visitor's browser by design.
+
+## What was in the leak
+
+FulcrumSec's published dataset, which it describes as "pure PII," breaks down to roughly:
+
+- 8.7–8.8 million customer profiles, including email addresses, names, phone numbers, home town or postal region, and residential IP addresses
+- Around 2.5 million purchase records covering car park, airport lounge, and Fast Track security bookings
+- More than 461,000 SMS messages, some containing booking dates, car park details, and vehicle registration numbers in plain text
+- Roughly 108,000 unique UK vehicle registration plates
+- Around 191,000 records described as future bookings, including travel schedules
+- A claimed 1.2 billion "marketing events" — logs of email sends, opens, and clicks — though a figure of that size is difficult to independently verify from the outside
+
+MAG has confirmed the breach and confirmed that data was held in a third-party database, but has not published its own detailed breakdown of exactly what was exposed, and has said core airport operations — flights, security, and boarding — were not affected at any point.
+
+## Claims that remain unverified
+
+FulcrumSec has made several additional claims that go beyond what MAG has confirmed. The group alleges that some of the future-booking records it obtained belong to politicians, public figures, and military personnel, and that it deleted the most sensitive portions of the stolen data after MAG's ransom refusal, leaving a less damaging (but still enormous) dataset in the public leak. Neither claim has been independently verified, and MAG has not commented on them specifically. Ransomware and extortion groups have a well-documented incentive to exaggerate the sensitivity of what they've stolen in order to pressure a victim into paying, so both claims should be treated as allegations from the attacker rather than confirmed fact until shown otherwise.
+
+[IMAGE:2]
+
+## Why this one stands out
+
+Airport operators sit on an unusually rich pile of personal data for a transportation company: not just names and emails, but vehicle plates, home addresses, IP addresses, and — for anyone who used in-terminal Wi-Fi, a lounge, or Fast Track — a timestamped record of exactly when they were physically at a given airport. Combined with future booking data, that's the kind of information that has real physical-safety implications for the people in the highest-risk categories, whether or not FulcrumSec's specific claim about politicians and military staff holds up.
+
+The alleged entry point is also a useful reminder for any organization running customer-engagement or marketing-automation tooling: those platforms are frequently integrated via API keys embedded directly in client-side code for convenience, and a key with write or administrative scope has no business being readable by anyone who loads the page. Scoped, read-only, domain-restricted keys — or better, a server-side proxy that never exposes the credential to the browser at all — are the standard fix, and it's one most organizations only discover they're missing after a breach like this one.
+
+MAG has not announced further remediation steps publicly as of this writing, and the incident remains under investigation.`},
+
 {id:"anthropic-openai-ai-models-hacked-companies-2026",section:"analysis",category:"incident-analysis",
  image:"/assets/images/articles/anthropic-openai-ai-models-hacked-companies-2026-hero.jpg",
  imageAlt:"Digital illustration of a humanoid AI figure breaking through a shattered glass containment box in a server room, symbolizing an AI model escaping its test environment",

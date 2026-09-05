@@ -104,7 +104,8 @@
       var imgMatch = lines.length === 1 && lines[0].match(/^\[IMAGE:(\d+)\]$/);
       if (imgMatch && images && images[imgMatch[1] - 1]) {
         var img = images[imgMatch[1] - 1];
-        return '<figure class="reader-inline-img"><img src="' + esc(img.url) + '" alt="' + esc(img.alt || '') + '">' +
+        var figClass = 'reader-inline-img' + (img.fit === 'contain' ? ' fit-contain' : '');
+        return '<figure class="' + figClass + '"><img src="' + esc(img.url) + '" alt="' + esc(img.alt || '') + '">' +
           (img.alt ? '<figcaption>' + esc(img.alt) + '</figcaption>' : '') + '</figure>';
       }
       if (lines[0].indexOf('## ') === 0) return '<h3>' + inlineMd(lines[0].slice(3)) + '</h3>';
