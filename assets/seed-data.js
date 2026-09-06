@@ -97,6 +97,43 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"mikrotik-routeros-mikrotrick-2026",section:"news",category:"vulnerabilities",
+ image:"/assets/images/articles/mikrotik-routeros-mikrotrick-2026-hero.jpg",
+ imageAlt:"Photo of a MikroTik hAP ac2 router next to its RouterBOARD packaging, the type of device affected by the RouterOS vulnerabilities disclosed in September 2026",
+ images:[{url:"/assets/images/articles/mikrotik-routeros-mikrotrick-2026-inline.jpg",alt:"Photo of a tangled mass of blue, white, and red network cables running into a server rack, representing the internet-facing network infrastructure exposed by the MikroTrick attack chain"}],
+ date:"2026-09-06T13:00:00Z",author:"SentinelCores Desk",
+ title:"MikroTik Routers Hijacked by \"MikroTrick\" Attack Chain — Exploited Days Before the Bug Was Even Disclosed",
+ dek:"Attackers were breaking into internet-facing MikroTik routers with no valid credentials three days before anyone outside MikroTik and Poland's national CERT knew the bug existed. Roughly 300,000 vulnerable devices are still reachable online.",
+ excerpt:"A chained SSH flaw dubbed \"MikroTrick\" let attackers seize full control of MikroTik routers with no credentials — and real-world attacks began before the bug was even disclosed.",
+ tags:["MikroTik","RouterOS","MikroTrick","Vulnerability","CERT Polska","Network Security"],featured:true,trending:true,sourceName:"CERT Polska, MikroTik",
+ severity:"critical",status:"Active",
+ keyTakeaways:["CERT Polska found six vulnerabilities in MikroTik's RouterOS; two of them chain together into an attack dubbed \"MikroTrick\" that grants full unauthenticated control of a router with SSH exposed to the internet","Real-world exploitation began by at least September 2, 2026 — three days before MikroTik shipped a fix on September 3 and before CERT Polska's public technical write-up on September 5","The core flaw, CVE-2026-67276 (CVSS 9.2), exists because RouterOS never verified a complete RSA public key during SSH login, letting an attacker who knows a valid username forge a working key without ever having the matching private key","A second bug, CVE-2026-86060, lets an attacker escalate a forged login into full administrative control via a crafted username","Shodan scans show roughly 300,000 internet-facing devices still running vulnerable RouterOS versions; MikroTik has published specific log indicators owners can check for signs of compromise"],
+ body:`Poland's national computer emergency response team, CERT Polska, disclosed on September 5, 2026 that attackers had been actively hijacking internet-facing MikroTik routers using a chain of vulnerabilities the team calls "MikroTrick" — and that the attacks began before the vulnerability was even publicly known. CERT Polska says it identified six distinct vulnerabilities in MikroTik's RouterOS operating system in total; two of them, chained together, are enough to hand an attacker complete, unauthenticated control of a router, provided its SSH service is reachable from the public internet.
+
+[IMAGE:1]
+
+## How MikroTrick works
+
+The core of the chain is CVE-2026-67276, rated 9.2 out of 10 in severity. RouterOS's SSH implementation is supposed to verify a client's complete RSA public key before allowing a login, but CERT Polska found that it only checked part of it. An attacker who already knows a valid username on the target router — and the public half of that user's real key, which is not treated as secret — can construct a different key that RouterOS will still accept, without ever possessing the corresponding private key that's supposed to be required to prove identity.
+
+That gets an attacker a foothold, but not necessarily full control. The second half of the chain, CVE-2026-86060, closes that gap: by logging in with a specially crafted username that starts with characters RouterOS shouldn't allow, an attacker can escalate that initial access into full administrative privileges. Chained together, the two bugs let someone with network access to a router's SSH port take it over completely, with no valid password, no private key, and no user interaction required. CERT Polska also disclosed a third, separate flaw — CVE-2026-67277, rated 8.8 — in RouterOS's bandwidth-test service, which can leak router memory contents and be used for unauthenticated denial-of-service attacks, though it isn't part of the MikroTrick chain itself.
+
+## Attackers moved before defenders knew
+
+The most unusual part of this disclosure is the timeline. CERT Polska says it observed real attacks against internet-exposed RouterOS devices using the MikroTrick chain starting on or before September 2, 2026. MikroTik itself didn't ship a fix until September 3, and even then withheld technical detail, telling customers only: "To give time to update your systems, we are not currently publishing detailed information." CERT Polska's full technical write-up followed on September 5. In other words, for at least several days, attackers had working exploit code for a bug that hadn't been made public — a pattern much more commonly associated with a true zero-day than with a routine coordinated disclosure.
+
+CERT Polska has published specific indicators device owners can check for. Compromised routers show SSH login log entries referencing a suspicious username of "-2" attached to newly created accounts, in the pattern \`login failure for user -2 from <ip> via ssh user <name> added by ssh:-2@<ip>\`. Investigators have also flagged an unexpected "ops" user account as a sign of compromise, and identified two IP addresses — 82.192.72.4, tied to confirmed exploitation, and 103.102.31.18, tied to attempted exploitation — worth searching connection logs for.
+
+## An unusual discovery method
+
+CERT Polska says the six vulnerabilities were originally surfaced by its researchers using two AI models — described as "GPT-5.5-cyber" and "GPT-5.6-sol" — to run automated analysis of RouterOS, with human researchers then verifying the findings and assessing real-world impact. It's a small but notable detail at a moment when AI-assisted vulnerability research and AI-assisted attacks are both becoming more common — this same week, this site covered [Anthropic and OpenAI's disclosures](/analysis/anthropic-openai-ai-models-hacked-companies-2026/) that their own AI models had autonomously hacked real companies during safety testing. Here, a comparable AI-driven analysis process appears to have been the reason this router flaw was found and fixed at all, rather than the reason for an attack.
+
+## Who's exposed, and what to do
+
+MikroTik has released fixes across every active release branch: RouterOS 7.25 beta 3, 7.24.2, 7.23.4, and the long-term-support 6.49.21 line all patch the issue. The company's own advisory downplays the risk to typical home users — "For regular home device users the issue does not pose an immediate risk, but we still suggest all users to upgrade" — while stressing that anyone running RouterOS with SSH exposed to the internet should treat this as urgent.
+
+Despite the patch being available, Shodan scans continue to show roughly 300,000 internet-facing devices running vulnerable RouterOS versions, days after the fix shipped — a familiar pattern for embedded network hardware, which is frequently deployed once and rarely revisited. MikroTik's recommended response: update through the router's built-in "Check for updates" tool, then check system logs for a "Flagged" status, which the company uses to mark devices showing signs of prior compromise, and manually audit the device configuration for unrecognized users, scripts, or scheduled tasks even after patching — since a patch closes the door but does not evict an attacker who already has a foothold.`},
+
 {id:"mag-manchester-airports-breach-2026",section:"news",category:"data-breaches",
  image:"/assets/images/articles/mag-manchester-airports-breach-2026-hero.jpg",
  imageAlt:"Exterior view of Terminal 2 at Manchester Airport, one of three UK airports operated by Manchester Airports Group affected by the September 2026 data breach",

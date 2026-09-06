@@ -115,7 +115,11 @@
       return '<p>' + inlineMd(lines.join(' ')) + '</p>';
     }).join('');
   }
-  function inlineMd(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'); }
+  function inlineMd(s) {
+    return esc(s)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  }
 
   // ── Routing paths ────────────────────────────────────────
   var SECTION_HREF = { home: '/', news: '/news/', threats: '/threats/', analysis: '/analysis/', guides: '/guides/', videos: '/videos/' };
