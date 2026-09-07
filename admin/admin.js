@@ -349,7 +349,7 @@ async function saveSite() {
 }
 
 // ── Socials ───────────────────────────────────────────
-var SOCIAL_PLATFORMS = ['twitter', 'facebook', 'linkedin', 'instagram', 'youtube', 'telegram', 'mastodon', 'rss'];
+var SOCIAL_PLATFORMS = ['twitter', 'facebook', 'linkedin', 'instagram', 'youtube', 'telegram', 'mastodon', 'reddit', 'rss'];
 function fillSocialsForm() {
   var s = state.site.socials || {};
   SOCIAL_PLATFORMS.forEach(function (p) {

@@ -32,6 +32,7 @@ function defaultSite() {
       youtube: { url: "", handle: "" },
       telegram: { url: "", handle: "" },
       mastodon: { url: "", handle: "" },
+      reddit: { url: "", handle: "" },
       rss: { url: "", handle: "RSS Feed" }
     }
   };
