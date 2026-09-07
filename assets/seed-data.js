@@ -97,6 +97,57 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"qtfy-china-hackers-doj-fbi-seizure-2026",section:"news",category:"nation-state",
+ image:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-hero.jpg",
+ imageAlt:"Photo of the Robert F. Kennedy Department of Justice Building in Washington, D.C., the U.S. Department of Justice headquarters",
+ images:[
+   {url:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-doj-seal.svg",alt:"Official seal of the United States Department of Justice",fit:"contain"},
+   {url:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-fbi-seal.svg",alt:"Official seal of the Federal Bureau of Investigation (FBI)",fit:"contain"}
+ ],
+ date:"2026-09-06T18:00:00Z",author:"SentinelCores Desk",
+ title:"DOJ and FBI Seize Domains Behind Eight-Year Chinese Hacking Campaign That Hit NASA, the Senate, and the Federal Reserve",
+ dek:"Court-authorized seizures disabled QScan and QTRouter, the hacking and obfuscation platforms a Chinese state-sponsored group called QTFY used for nearly eight years to infect IoT devices worldwide and route espionage traffic through more than 130 countries — including two failed attempts to scan a U.S. election system.",
+ excerpt:"The DOJ and FBI seized the domains powering QTFY's QScan and QTRouter platforms, disabling an eight-year Chinese state-sponsored espionage operation that hit NASA, the Federal Reserve, the Senate, and dozens of critical infrastructure providers.",
+ tags:["QTFY","China","DOJ","FBI","NSA","Nation-State","Espionage","Critical Infrastructure"],featured:true,trending:true,sourceName:"Department of Justice, FBI, NSA",
+ severity:"critical",status:"Active",
+ keyTakeaways:["The DOJ and FBI announced on August 26, 2026 that they had seized three domains hard-coded into QScan and QTRouter, hacking platforms built and operated by a PRC state-sponsored group called QTFY — court records show the seizures made both platforms inoperable","QTFY was run out of Nanjing Xinjiuwei Network Technology Company, which sold its services to paying customers including the People's Liberation Army and China's Ministry of State Security","Seven federal victims are named in court filings: NASA, the Federal Reserve, the DOJ itself, the Department of Energy, HHS, the National Institutes of Health, and the U.S. Senate — alongside telecom firms, hospitals, defense contractors, power companies, and financial institutions","A joint NSA/FBI/Cyber National Mission Force advisory traces the campaign back to at least May 2018, and documents two separate, unsuccessful attempts to scan a U.S. election system, in 2019 and again in June 2026","Black Lotus Labs, which fed intelligence to the takedown, calls this a \"quartermaster model\" — shared hacking infrastructure other PRC-linked operators could rent, rather than a single group's private tooling"],
+ body:`The Justice Department and FBI announced on August 26, 2026 that they had used court-authorized domain seizures to dismantle the hacking infrastructure behind an espionage campaign that court records trace back nearly eight years, hitting NASA, the Federal Reserve, the U.S. Senate, and dozens of other federal agencies and critical infrastructure operators. Attorney General Todd Blanche said in a statement that "state-sponsored malicious hackers preying on America's critical infrastructure will be stopped and prosecuted," while FBI Director Kash Patel described the action as "the disruption of a global botnet and hacking platform used by Chinese state-sponsored hackers."
+
+## The platforms: QScan and QTRouter
+
+Court documents unsealed in the Southern District of California identify the operation as the work of a China state-sponsored group known as QTFY, employed by a company called Nanjing Xinjiuwei Network Technology Company (南京鑫玖维网络科技有限公司). According to the filings, Nanjing Xinjiuwei didn't just hack on its own behalf — it sold access to its tools to paying customers, including the People's Liberation Army and China's Ministry of State Security, effectively operating as a hacking-infrastructure vendor rather than a single dedicated espionage unit.
+
+The company built and ran two complementary platforms. QScan handled reconnaissance and automated exploitation, scanning the internet and infecting thousands of vulnerable internet-of-things devices worldwide. Those hijacked devices were then folded into QTRouter, which functioned as an obfuscation layer — routing malicious traffic through compromised home and small-office routers, other IoT devices, commercial proxy services, and leased virtual private servers spread across more than 130 countries, with IP addresses rotated dynamically to make the traffic's true Chinese origin difficult to trace. Because the seized domains were hard-coded into both platforms and used for essential functions like command communication and authentication, the DOJ says the seizures rendered QScan and QTRouter inoperable.
+
+[IMAGE:1]
+
+## Who was targeted
+
+Court filings name seven federal entities as QTFY victims: NASA, the Federal Reserve, the Department of Justice itself, the Department of Energy, the Department of Health and Human Services, the National Institutes of Health, and the U.S. Senate. Beyond the federal government, officials say QTFY also went after critical infrastructure operators more broadly — telecommunications companies, hospitals, defense contractors, power utilities, and financial institutions.
+
+A joint advisory issued the same day by the NSA, FBI, and the Cyber National Mission Force places the earliest observed activity in the campaign at May 2018, when QTFY scanned the Department of Energy for vulnerabilities. The advisory also documents two separate, unsuccessful attempts by QTFY to scan a U.S. election system for weaknesses — one in 2019, and another as recently as June 2026, just weeks before the takedown. Officials say neither attempt succeeded in breaching election infrastructure.
+
+## How they got in
+
+The NSA and FBI say QTFY's hackers relied on a mix of zero-day and previously known ("N-day") vulnerabilities to gain initial access, then stole legitimate credentials to maintain persistence on victim networks. Court records and the joint advisory detail several specific intrusions:
+
+- In 2024, QScan exploited a Check Point Quantum Gateway vulnerability, CVE-2024-24919, to scan power and telecommunications companies, ultimately stealing data from more than 300 organizations globally, including financial services firms, universities, and defense contractors.
+- Three zero-day vulnerabilities in Ivanti's Cloud Services Appliance — CVE-2024-8190, CVE-2024-8963, and CVE-2024-9380 — were used to target laboratories at the Department of Energy, HHS, and the National Institutes of Health, along with a U.S. security device manufacturer.
+- An authentication-bypass flaw in CrushFTP, CVE-2025-31161, was used against a U.S. biotechnology firm.
+- A BeyondTrust vulnerability, CVE-2026-1731, was used in an attack on a U.S. state government and, separately, a water district.
+
+## A "quartermaster model" for state hacking
+
+Lumen Technologies' Black Lotus Labs, which tracked the operation and fed intelligence to law enforcement ahead of the takedown, describes QTFY's structure as a "quartermaster model" — the integration of reconnaissance, proxy orchestration, and operational traffic routing into a single reusable service layer that other Chinese state-linked hacking operations could effectively rent, rather than build themselves. Damon Rouse, a senior information security engineer at Black Lotus Labs, told Cybersecurity Dive: "From what we saw, this was a classic espionage campaign focused on reconnaissance, exploitation, and information collection. We did not observe any information influence operations or destructive components."
+
+That framing matters for how this operation is understood: QTFY's role looked less like a single espionage unit and more like a contractor supplying infrastructure — scanning, proxying, and traffic obfuscation — to whichever state-linked customer needed it, echoing a pattern researchers say is common among Chinese cybersecurity firms founded by former People's Liberation Army personnel, which can offer the government specialized capability with a layer of plausible deniability.
+
+[IMAGE:2]
+
+## What organizations should do
+
+The domain seizures disabled QTFY's existing infrastructure, but the underlying technique — mass-scanning for known and zero-day flaws, then hijacking ordinary routers and IoT devices to build an anonymizing proxy network — isn't unique to this one group and won't disappear because these specific domains went offline. NSA officials recommend organizations apply the latest firmware updates to IoT and network edge devices, isolate critical internal systems from internet-facing edge infrastructure, and regularly audit public-facing webpages and applications for signs of tampering or unauthorized scanning activity.`},
+
 {id:"papercut-education-sector-credential-theft-2026",section:"news",category:"data-breaches",
  image:"/assets/images/articles/papercut-education-sector-credential-theft-2026-hero.jpg",
  imageAlt:"Photo of a school computer lab with rows of desktop computers, representing the K-12 and university networks targeted in the PaperCut credential-theft campaign",
