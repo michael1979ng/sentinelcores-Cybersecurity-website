@@ -97,6 +97,43 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"papercut-education-sector-credential-theft-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/papercut-education-sector-credential-theft-2026-hero.jpg",
+ imageAlt:"Photo of a school computer lab with rows of desktop computers, representing the K-12 and university networks targeted in the PaperCut credential-theft campaign",
+ images:[{url:"/assets/images/articles/papercut-education-sector-credential-theft-2026-inline.jpg",alt:"Photo of an Ethernet cable connected to the network port of an office laser printer, representing the network-exposed PaperCut print-management servers attackers are exploiting"}],
+ date:"2026-09-06T16:00:00Z",author:"SentinelCores Desk",
+ title:"Attackers Exploit PaperCut Flaws to Steal Credentials From Schools and Universities",
+ dek:"A chained authentication-bypass and remote-code-execution flaw in PaperCut's print-management software is being actively exploited against K-12 schools and universities across the U.S. and Europe, with attackers harvesting Windows credentials that could open a path into far more than just the print server.",
+ excerpt:"Attackers are chaining two PaperCut flaws for pre-auth code execution, hitting schools and universities across the U.S. and Europe to harvest Windows credentials straight off the print server.",
+ tags:["PaperCut","Education","Arctic Wolf","Vulnerability","Credential Theft","Schools","Universities"],featured:true,trending:true,sourceName:"The Hacker News, Arctic Wolf",
+ severity:"critical",status:"Active",
+ keyTakeaways:["Attackers are chaining CVE-2026-81578 (an 8.8-severity authentication bypass) with CVE-2026-82078 (a 9.4-severity unsafe class-loading flaw) to achieve unauthenticated remote code execution on PaperCut NG/MF servers","Arctic Wolf says the campaign is actively hitting education-sector organizations across the U.S. and Europe, ranging from K-12 schools to major universities","Post-exploitation activity includes creating privileged accounts like \"Administrator17,\" running system-discovery commands, and deploying credential-harvesting tools that can reconstruct a system's SAM database via its BootKey","Huntress first detected exploitation on August 26, 2026; PaperCut has since shipped two emergency patches after researchers found the first one could still be bypassed","CISA has added both CVEs to its Known Exploited Vulnerabilities catalog; organizations are urged to take PaperCut servers off the public internet and hunt for the specific indicators Arctic Wolf published"],
+ body:`Security researchers at Arctic Wolf say attackers are actively exploiting a pair of vulnerabilities in PaperCut's print-management software to break into schools and universities across the United States and Europe, with the ultimate goal of stealing Windows credentials that could be reused to move deeper into a victim's network.
+
+[IMAGE:1]
+
+## The vulnerability chain
+
+The campaign relies on two flaws working together. CVE-2026-81578, rated 8.8 in severity, is an authentication bypass in the web management interface of PaperCut NG and MF: certain unauthenticated requests can trigger backend administrative actions before the software finishes checking whether the requester is allowed to make them. On its own, that's a serious access-control failure. Chained with CVE-2026-82078 — a 9.4-severity flaw in PaperCut's database connection utilities, where the software could be tricked into loading an attacker-chosen Java class instead of a legitimate database driver — the two bugs together let an attacker execute arbitrary code on a PaperCut server with no login credentials at all.
+
+Huntress, a separate security firm, says it first observed real-world exploitation of this chain on August 26, 2026. PaperCut shipped an emergency patch shortly after, but researchers — including Huntress and watchTowr — found ways to bypass the initial fix, forcing the company to release a second emergency patch, "Release 2," on August 28, covering PaperCut NG/MF versions 24, 25, and 26. PaperCut has told customers to install the second patch even if they already applied the first, and has advised anyone still running version 23 or earlier to upgrade rather than rely on either patch. CISA has since added both CVEs to its Known Exploited Vulnerabilities catalog, which carries a mandatory remediation deadline for U.S. federal agencies.
+
+## What attackers do once they're in
+
+According to Arctic Wolf, once attackers gain code execution on a vulnerable server, the pattern of activity is fairly consistent. They run basic discovery commands — \`uname\`, \`whoami\`, \`ver\`, and \`tasklist\` — to fingerprint the system, and create new privileged accounts, including one observed repeatedly under the name "Administrator17." Arctic Wolf also documented inbound requests from the IP address 45.142.193[.]132 requesting files matching the pattern \`/custom/pcp_*.txt\` and \`/custom/web/pcp_*.txt\` on compromised hosts — files that appear to hold harvested system and user data collected during the intrusion.
+
+The same IP address has been used to deliver credential-harvesting tools — named \`lsa_collect.exe\`, \`lsa_collect_small.exe\`, and \`save_hives.exe\` — onto compromised servers via the legitimate Windows utility \`certutil.exe\`, a technique commonly used to disguise malicious downloads as routine certificate operations. Separately, attackers have retrieved Meterpreter Java payloads from, and opened sessions back to, a second IP address, 194.180.48[.]134. Investigators also observed attackers using \`findstr\` to search through PaperCut's own \`.config\` files for the plain strings "password," "secret," "ldap," "bind," and "token" — a quick, low-effort way to check whether a target's own configuration files have leaked credentials for other systems.
+
+## Why credential theft here is a bigger problem than it sounds
+
+The most technically significant tool in the attackers' kit is \`lsa_collect.exe\`, which Arctic Wolf analyzed in a sandbox environment. The tool extracts specific Windows registry keys in order to reconstruct a system's "BootKey" — a value that, once obtained, can be used to decrypt the Security Account Manager (SAM) database, the local store of Windows account password hashes. In effect, a single compromised PaperCut server can hand an attacker every local Windows credential stored on that machine.
+
+That matters because a print-management server is rarely an organization's most tightly monitored system, but it's still a Windows machine joined to the same network — and often the same identity infrastructure — as everything else. "The concern is that those stolen logins could give attackers a pathway into other critical systems across the environment," Arctic Wolf said. A credential lifted off a print server today can become the login used against a school district's student information system, a university's research network, or its email tomorrow.
+
+## What organizations should do
+
+PaperCut and Arctic Wolf's guidance is consistent with how the vulnerability chain works in the first place: it requires network access to the PaperCut web interface, so removing that exposure closes the door regardless of patch status. Recommended steps include taking PaperCut Application Servers off the public internet entirely, applying Emergency Patch Release 2 (or upgrading off version 23 and earlier), and actively hunting logs for the indicators Arctic Wolf published — particularly \`cmd.exe\`, \`powershell.exe\`, or other command interpreters spawned with \`pc-app.exe\` as the parent process, and command lines containing \`whoami\`, \`tasklist\`, \`ver\`, or \`uname -a\`. Any unfamiliar administrator account, especially one resembling the "Administrator17" pattern Arctic Wolf observed, should be treated as a strong indicator of compromise requiring immediate investigation, not just removal.`},
+
 {id:"mikrotik-routeros-mikrotrick-2026",section:"news",category:"vulnerabilities",
  image:"/assets/images/articles/mikrotik-routeros-mikrotrick-2026-hero.jpg",
  imageAlt:"Photo of a MikroTik hAP ac2 router next to its RouterBOARD packaging, the type of device affected by the RouterOS vulnerabilities disclosed in September 2026",
