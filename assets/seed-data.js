@@ -98,6 +98,43 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"luminis-health-cyberattack-maryland-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/luminis-health-cyberattack-maryland-2026-hero.jpg",
+ imageAlt:"Photo of Luminis Health Anne Arundel Medical Center in Annapolis, Maryland, one of two hospitals affected by the September 2026 cyberattack",
+ images:[{url:"/assets/images/articles/luminis-health-cyberattack-maryland-2026-inline.jpg",alt:"Photo of clinical staff using a hospital telemedicine video system, representing the patient-facing technology systems disrupted by the Luminis Health cyberattack"}],
+ date:"2026-09-17T14:00:00Z",author:"SentinelCores Desk",
+ title:"Cyberattack Knocks Out Systems at Two Maryland Hospitals — Two Weeks Later, Still No Answers",
+ dek:"Luminis Health, which runs Anne Arundel Medical Center and Doctors Community Medical Center, first disclosed a cyberattack on September 2. More than two weeks later, no group has claimed responsibility, no timeline for full restoration has been given, and it's still unclear whether patient data was exposed.",
+ excerpt:"Luminis Health's MyChart and phone systems have been down since a September 2 cyberattack hit both of its Maryland hospitals — two weeks on, there's still no attribution, no restoration timeline, and no word on whether patient data was exposed.",
+ tags:["Luminis Health","Maryland","Healthcare","Data Breach","Anne Arundel Medical Center","Ransomware"],featured:true,trending:true,sourceName:"CBS Baltimore, WUSA9, Maryland Matters",
+ severity:"high",status:"Under Investigation",
+ keyTakeaways:["Luminis Health, a nonprofit health system serving Maryland's Eastern Shore, Anne Arundel County, and Prince George's County, first disclosed a cyberattack on September 2, 2026","The attack affected both of the system's hospitals — Anne Arundel Medical Center in Annapolis and Doctors Community Medical Center in Lanham — along with more than 100 other care locations","MyChart, the CareConnectNow patient portal, and the organization's phone systems were all taken offline; some non-critical ambulance traffic was rerouted to other facilities","More than two weeks after the initial disclosure, no ransomware or extortion group has publicly claimed responsibility, and Luminis has not said whether patient data was accessed or stolen","Healthcare was the single most targeted sector for ransomware in the U.S. in 2025, according to FBI data, with 460 of 2,118 reported critical-infrastructure ransomware attacks hitting the healthcare and public health sector"],
+ body:`Luminis Health, the nonprofit health system that operates Anne Arundel Medical Center in Annapolis and Doctors Community Medical Center in Lanham, disclosed on September 2, 2026 that it had been hit by a cyberattack that took "certain systems" offline. More than two weeks later, the organization still hasn't said what kind of attack it was, whether patient data was exposed, or when the affected systems will be fully restored.
+
+[IMAGE:1]
+
+## What happened
+
+Luminis Health serves patients across Maryland's Eastern Shore, Anne Arundel County, and Prince George's County, operating more than 100 care locations in addition to its two hospitals. In its initial alert, the organization said it was "working urgently to address the incident and restore affected systems," and told patients with upcoming appointments to call a dedicated line to confirm their appointment status before arriving, since the disruption extended to the health system's own phone infrastructure.
+
+The MyChart patient portal and the CareConnectNow platform were both taken offline as a result of the incident. The disruption was significant enough that some non-critical ambulance traffic was rerouted away from Luminis facilities to other hospitals in the region while systems were down, though both Anne Arundel Medical Center and Doctors Community Medical Center continued treating patients throughout.
+
+## No attribution, no timeline
+
+Two weeks on, several basic facts about the incident remain unknown publicly. Luminis has not said whether the attack involved ransomware, and as of this writing no ransomware or data-extortion group has posted a claim of responsibility on a leak site or elsewhere — a notable absence, since groups that steal data from healthcare targets typically publicize the attack fairly quickly to pressure victims into paying. That silence could mean the incident didn't involve data theft at all, or simply that no group has chosen to claim it yet; without official confirmation, either is possible.
+
+Luminis says it engaged its legal team and third-party cybersecurity experts to investigate and has not provided a timeline for when affected systems will be fully restored. On the question of patient data, the health system has said only that it's too early to tell what, if any, patient information was involved, and that it will notify affected individuals "in accordance with applicable requirements" if the investigation determines notification is necessary.
+
+## Part of a larger pattern
+
+Coverage of the Luminis incident has increasingly framed it as one more data point in a broader, well-documented trend: healthcare remains the single most targeted sector for ransomware in the United States. FBI data on ransomware attacks against U.S. critical infrastructure in 2025 shows the healthcare and public health sector accounted for 460 of 2,118 total reported attacks — more than any other sector tracked. Hospitals make an attractive target precisely because of the operational pressure a systems outage creates: patient care can't simply pause while IT teams investigate, which gives attackers real leverage even when, as in this case, the hospitals themselves stay open and continue treating patients throughout.
+
+Maryland has been down this road before. The city of Baltimore's own 2019 ransomware attack knocked out government systems for weeks and cost the city millions of dollars in recovery — a reminder that a "systems restored" headline is often followed months later by a far more expensive final accounting of what the incident actually cost.
+
+## What's next
+
+Until Luminis Health provides a fuller public accounting, patients affected by the outage are left in the same position they've been in since September 2: uncertain whether their personal or medical information was exposed, and reliant on the health system's own investigation to eventually say so one way or the other. SentinelCores will update this story if Luminis issues a formal breach notification or if a threat actor publicly claims responsibility.`},
+
 {id:"qtfy-china-hackers-doj-fbi-seizure-2026",section:"news",category:"nation-state",
  image:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-hero.jpg",
  imageAlt:"Photo of the Robert F. Kennedy Department of Justice Building in Washington, D.C., the U.S. Department of Justice headquarters",
