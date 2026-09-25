@@ -98,6 +98,77 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"bitget-crypto-hack-north-korea-2026",section:"news",category:"cybercrime",
+ image:"/assets/images/articles/bitget-crypto-hack-north-korea-2026-hero.jpg",
+ imageAlt:"Photo of a padlock resting on a gold physical Bitcoin coin, representing the $351.6 million cryptocurrency exchange hack at Bitget",
+ images:[{url:"/assets/images/articles/bitget-crypto-hack-north-korea-2026-logo.svg",alt:"Bitget cryptocurrency exchange logo",fit:"contain"}],
+ date:"2026-09-25T14:00:00Z",author:"SentinelCores Desk",
+ title:"Bitget Crypto Exchange Hacked for $351.6 Million in Suspected North Korean Lazarus Group Attack",
+ dek:"Bitget says attackers drained hundreds of millions of dollars from its hot and warm wallets in the largest cryptocurrency heist of 2026 so far. The exchange has suspended withdrawals and points to IP infrastructure historically tied to North Korea's Lazarus Group, though it has not yet explained how the attackers got in.",
+ excerpt:"Bitget confirmed a $351.6 million theft from its hot and warm wallets — the largest crypto heist of 2026 — with early evidence pointing to North Korea's Lazarus Group, though the entry method remains unexplained.",
+ tags:["Bitget","Cryptocurrency","North Korea","Lazarus Group","Cybercrime","Crypto Exchange Hack"],featured:true,trending:true,sourceName:"Bitget, CNBC, Hackread",
+ severity:"critical",status:"Under Investigation",
+ keyTakeaways:["Bitget's security systems detected unauthorized transfers from its hot wallets at 18:31 UTC on September 24, 2026, in what has become the largest cryptocurrency heist of 2026 so far at $351.6 million","Stolen assets include roughly 102.9 million XRP (about $158 million), 31,890 ETH (about $86 million), and a mix of USDT, USDC, BNB, AVAX, TRX, and tokenized gold","Bitget CEO Gracy Chen says investigators found IP addresses linked to VPN infrastructure previously associated with North Korea's Lazarus Group, and that the attack pattern resembles past Lazarus operations — though no technical evidence has been published yet","Attackers transferred funds directly out of the wallets rather than forging withdrawal requests; Bitget says customer private keys and cold wallets were not compromised, and it has not ruled out but considers insider involvement unlikely","The exchange has suspended withdrawals and says the full $351.6 million loss will be covered by its User Protection Fund, which held more than $464 million before the incident"],
+ body:`Cryptocurrency exchange Bitget confirmed on September 25, 2026 that attackers stole $351.6 million from its hot and warm wallets a day earlier, making it the largest cryptocurrency heist of 2026 so far. The exchange has suspended withdrawals, and its CEO says early evidence points toward North Korea's Lazarus Group, though the company has not yet said how the attackers actually got in.
+
+## What happened
+
+According to Bitget CEO Gracy Chen, the exchange's security systems detected unauthorized transfers from some of its hot wallets at 18:31 UTC on September 24, 2026. The attackers moved funds directly out of the affected wallets rather than forging withdrawal requests through the exchange's normal user-facing systems. Bitget has been explicit that customer private keys were not obtained and that its cold wallet infrastructure — where the bulk of exchange reserves are typically kept offline — was not compromised. Part of the exchange's warm-wallet layer, sitting between hot wallets and cold storage, was also affected.
+
+[IMAGE:1]
+
+## What was stolen
+
+On-chain analytics firm Lookonchain tracked the stolen funds across multiple assets. The single largest chunk was roughly 102.9 million XRP, worth close to $158 million at the time, making it the biggest individual asset lost in the breach. Attackers also took about 31,890 ETH, worth roughly $86 million, along with a mix of USDT, USDC, USDT0, tokenized gold (XAUt), BNB, AVAX, and TRX.
+
+## The North Korea question
+
+Chen said investigators identified IP addresses connected to VPN services that have previously been linked to North Korean state-backed hacking operations, and that the overall pattern of the attack resembles prior incidents attributed to the country. North Korean hacking groups, most notably Lazarus Group, have been blamed for a large share of the biggest cryptocurrency thefts of the past several years, typically laundering stolen funds through mixers and cross-chain bridges to fund the country's weapons programs. That said, as of this reporting, Bitget has not published technical evidence — such as wallet clustering analysis or malware samples — to support the North Korea attribution, and it should be treated as the exchange's working theory rather than a confirmed fact.
+
+Chen also addressed the possibility of an inside job directly, saying the company does not currently believe the breach involved a Bitget employee, while acknowledging investigators have not fully ruled it out and describe that likelihood as low.
+
+## Response and next steps
+
+Bitget suspended all withdrawals while the security review continues, flagged the attacker-controlled addresses, and has engaged law enforcement along with blockchain security firms Mandiant and SlowMist to assist the investigation. The exchange says the entire $351.6 million loss will be absorbed by its User Protection Fund, which held more than $464 million at the time of the incident — meaning, if that commitment holds, affected users should be made whole without the exchange needing to draw on customer funds elsewhere. Bitget has promised a fuller incident report, including details on how the attackers gained access in the first place, within 24 hours of its initial disclosure.`},
+{id:"shinyhunters-fbi-breach-claim-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/shinyhunters-fbi-breach-claim-2026-hero.jpg",
+ imageAlt:"Photo of the entrance to the J. Edgar Hoover FBI Building in Washington, D.C., the FBI's headquarters",
+ images:[{url:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-fbi-seal.svg",alt:"Official seal of the Federal Bureau of Investigation (FBI)",fit:"contain"}],
+ date:"2026-09-25T15:00:00Z",author:"SentinelCores Desk",
+ title:"ShinyHunters Claims It Hacked the FBI and Stole Data on Nearly Every Agent — Here's What's Actually Confirmed",
+ dek:"The extortion group ShinyHunters says it stole 2 to 3 terabytes of FBI personnel data through the FBIJobs.gov portal and is demanding the Bureau retract a May advisory or see the data published. The FBI is investigating, and journalists at three outlets have independently verified samples of the leaked data — but the group's broader claims remain unconfirmed.",
+ excerpt:"ShinyHunters claims it stole 2-3TB of FBI personnel data via FBIJobs.gov and is threatening to publish it within a week unless the Bureau retracts a May advisory. Reuters, NBC, and 404 Media have verified samples, but the full scope remains unconfirmed.",
+ tags:["ShinyHunters","FBI","Data Breach","Extortion","Government Security","Cybercrime"],featured:true,trending:true,sourceName:"NBC News, CBS News, Reuters, 404 Media",
+ severity:"critical",status:"Under Investigation",
+ keyTakeaways:["Extortion group ShinyHunters publicly claimed on September 22, 2026 that it breached the FBIJobs.gov portal and stole between 2 and 3 terabytes of FBI employee and job-applicant data","The group says the stolen data covers names, home addresses, and phone numbers for nearly all FBI agents and their spouses, plus information tied to sensitive intelligence-related roles","Reuters independently verified details on more than 22 people by cross-referencing the leaked data against credit records and prior breach data; a former FBI agent separately confirmed a sample document's authenticity to NBC News","ShinyHunters says the hack was retaliation for a May 2026 FBI public service announcement about the group, and is demanding the Bureau retract it or see the full dataset published within a week of the September 22 claim","The FBI has confirmed it is investigating and says the point of breach — whether the Bureau's own systems or a third party — is still undetermined; broader claims about access to Criminal Justice, HR, and Medlink-linked systems remain unverified by any outlet"],
+ body:`The cyber-extortion group ShinyHunters publicly claimed on September 22, 2026 that it had breached the FBI's own job-application portal and stolen between 2 and 3 terabytes of data covering nearly the entire roster of FBI personnel. The FBI has confirmed it is investigating. Independent journalists at multiple outlets have verified real samples of the leaked data — but significant parts of ShinyHunters' claims remain unconfirmed, and the group has a documented history of overstating what it actually has.
+
+## What ShinyHunters claims
+
+According to the group's own public statements, the breach ran through FBIJobs.gov, the Bureau's job-application portal, and from there reached broader internal systems. ShinyHunters says the stolen 2–3 terabytes include names, home addresses, and phone numbers for "almost ALL" FBI agents and their spouses, along with data on individuals who had simply applied for a job with the Bureau. Some of the claimed data allegedly includes details tied to sensitive intelligence-related roles specifically. The group has also claimed broader access to the FBI's Criminal Justice, HR, and Medlink-linked systems — claims that, as of this writing, no independent outlet has been able to verify.
+
+[IMAGE:1]
+
+## What's actually been verified, and by whom
+
+This is a story where the gap between claim and confirmation matters, and several news organizations have done real work to close part of that gap. Reuters says it independently verified the details of more than 22 individuals by cross-referencing information in the leaked dataset against credit records and previously leaked data from other breaches. Separately, a former FBI agent confirmed to NBC News that a sample document ShinyHunters provided as proof — containing sensitive personal information — was authentic. 404 Media reported receiving a sample of stolen names, home addresses, and phone numbers for FBI agents and their spouses, and verified a portion of it against public records.
+
+What hasn't been verified is the full scope: the claim that the data covers "almost all" FBI agents, and the claim of access to Criminal Justice, HR, and Medlink-linked systems specifically. Those remain ShinyHunters' word alone for now.
+
+## Extortion, not just a leak
+
+ShinyHunters has framed the breach explicitly as retaliation: the group says it acted in response to a public service announcement the FBI issued about ShinyHunters back in May 2026, and is demanding the Bureau retract that advisory. Its stated deadline was one week from the September 22 announcement — meaning ShinyHunters says it will publish the full dataset around September 29 if its demand isn't met. That structure is consistent with how the group has operated in other cases: steal data, release a verifiable sample to establish credibility, then use the threat of a full publication as leverage rather than simply dumping everything immediately.
+
+## The FBI's response
+
+The FBI's official statement acknowledges the claim without confirming its scope: "The FBI is aware of a cyber-criminal enterprise group claiming a compromise of the FBIJobs.gov portal and alleged impact to FBI employee personally identifiable information (PII)." Crucially, the Bureau says it has not yet determined the actual point of breach — whether the exposure originated inside the FBI's own systems or through a third-party vendor connected to the jobs portal, a distinction that matters considerably for how the incident will ultimately be scoped and who else might be affected.
+
+## Who ShinyHunters is
+
+ShinyHunters is a loosely organized, financially motivated extortion group that has been tied to a long list of high-profile breaches and CRM-linked data thefts over the past two years, frequently threatening public leaks on dark web forums to pressure victims into paying. Anthropic has separately reported disrupting ShinyHunters' attempts to use Claude to assist its hacking operations, dating back to December 2025 — another data point in the broader pattern, covered elsewhere on this site, of criminal groups incorporating AI tools directly into their attack workflow rather than AI vendors' own agents being the ones causing incidents.
+
+SentinelCores will update this story as the FBI's investigation and ShinyHunters' stated deadline both develop.`},
+
 {id:"openai-agent-australia-medicare-breach-2026",section:"news",category:"data-breaches",
  image:"/assets/images/articles/openai-agent-australia-medicare-breach-2026-hero.jpg",
  imageAlt:"Photo of Parliament House in Canberra, Australia, seat of the Australian government whose Medicare statistics portal was accessed by an OpenAI AI agent",
