@@ -98,6 +98,47 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"pentagon-dmdc-data-breach-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/pentagon-dmdc-data-breach-2026-hero.jpg",
+ imageAlt:"Aerial photo of the Pentagon in Washington, D.C., headquarters of the U.S. Department of Defense, whose Defense Manpower Data Center suffered a data breach affecting over 3 million people",
+ images:[{url:"/assets/images/articles/pentagon-dmdc-data-breach-2026-dod-seal.svg",alt:"Official seal of the United States Department of Defense",fit:"contain"}],
+ date:"2026-09-29T16:00:00Z",author:"SentinelCores Desk",
+ title:"Pentagon Data Breach Exposes Social Security Numbers of Over 3 Million Military Personnel and Veterans",
+ dek:"Unauthorized users had access to the Pentagon's Defense Manpower Data Center for nine months before anyone noticed, exposing unencrypted Social Security numbers, birth dates, and military job details for 2.76 million living people and 294,000 deceased. National security analysts warn the data could be used to profile or target service members.",
+ excerpt:"A nine-month-long breach of the Pentagon's Defense Manpower Data Center exposed unencrypted Social Security numbers and military personnel records for over 3 million people, only disclosed publicly this week.",
+ tags:["Pentagon","Department of Defense","Data Breach","DMDC","Military","National Security","Social Security Numbers"],featured:true,trending:true,sourceName:"Federal News Network, Stars and Stripes, CNN, Military Times",
+ severity:"critical",status:"Under Investigation",
+ keyTakeaways:["Unauthorized users accessed a vulnerable file-sharing system connected to the Pentagon's Defense Manpower Data Center (DMDC) from around October 2025 until the intrusion was discovered and patched on July 16, 2026 — a window of roughly nine months","The breach affects more than 3 million people: about 2.76 million living individuals and 294,000 deceased, with some reporting putting the total potentially affected DoD personnel as high as 4 million","Exposed data was unencrypted and includes names, Social Security numbers, dates of birth, contact information, gender, race, and military job specialties, varying by individual","Formal notification letters to affected individuals are dated September 18, 2026, and the breach wasn't broadly disclosed to the public until September 28-29 — roughly 11 months after unauthorized access is believed to have begun","National security analysts warn the exposed data could be combined with commercial datasets to profile, surveil, or target individual service members; U.S. Central Command has separately told lawmakers it has already seen adversaries exploit commercial data to track American personnel overseas"],
+ body:`The Pentagon has confirmed that unauthorized users had access to its Defense Manpower Data Center (DMDC) — the Department of Defense's central personnel records system — for roughly nine months before the intrusion was discovered, exposing unencrypted Social Security numbers, birth dates, and other sensitive information belonging to more than 3 million current and former military personnel and their dependents.
+
+## Timeline: nearly a year before the public found out
+
+According to DoD's own account, unauthorized access to a vulnerable file-sharing system tied to DMDC began around October 2025. It went undetected until July 16, 2026, when the Pentagon discovered and immediately patched the underlying vulnerability. Formal breach notification letters to affected individuals are dated September 18, 2026, and the breach only became broadly public through news reporting on September 28 and 29 — meaning close to a full year passed between when unauthorized access is believed to have started and when the public at large learned about it.
+
+[IMAGE:1]
+
+## Who and what was exposed
+
+The Pentagon says the breach affects more than 3 million people: approximately 2.76 million living individuals and about 294,000 deceased people whose records remained in the system. Some reporting on the incident puts the total number of potentially affected Department of Defense personnel as high as 4 million. The exposed data was unencrypted, and — varying by individual — included full names, Social Security numbers, dates of birth, contact information, gender, race, and military job specialties (occupational codes that can indicate a service member's specific role or unit type).
+
+DMDC is not a peripheral system. It's the backbone personnel database the Pentagon uses across a wide range of functions, from issuing military ID cards to managing benefits eligibility, making the scope of what a compromise there can expose considerably broader than a single application's user table.
+
+## Why this breach is being treated as more than routine
+
+Unlike a typical commercial data breach, security and national-security analysts covering this incident have focused less on identity theft risk and more on the exposure's value to a foreign intelligence service. CNN's reporting cites analysts warning that Social Security numbers and personnel data lifted from DMDC could be cross-referenced against commercial datasets — location data, spending habits, browsing activity, debt and financial records — to build detailed profiles of individual service members, including where they live, who they're married to, and their financial pressures. That kind of profile is exactly the raw material used for targeted phishing, blackmail leverage, or a foreign intelligence approach against someone with military access.
+
+That concern isn't hypothetical or new. U.S. Central Command has separately told lawmakers this year that it has already received multiple threat reports of adversaries exploiting commercial location data specifically to track or target American personnel deployed overseas. Analysts note the timing makes the exposure more acute rather than less, given current U.S. military activity involving Iran — a large, centralized breach of unencrypted personnel data landing in the middle of an active deployment period raises the stakes on what would, for a civilian organization, already be a serious incident.
+
+## What the Pentagon has and hasn't said
+
+DoD has confirmed the vulnerability was in a file-sharing system and has been patched, and says it has found no evidence so far that the exposed data has actually been misused. The Department has committed to further assessing and strengthening DMDC's cybersecurity posture. At the same time, the Pentagon has not disclosed who accessed the files, whether the intrusion was the work of a specific threat actor or opportunistic, or whether it believes the access was deliberate targeting versus incidental discovery of an exposed system — questions reporters at Stars and Stripes and other outlets say the Department has so far declined to answer.
+
+## What affected individuals can do
+
+Affected individuals are being offered 12 months of complimentary credit monitoring and identity-restoration services through IDX, a contractor working with the Defense Department, as detailed in the notification letters sent September 18. Given that the exposure includes unencrypted Social Security numbers, security experts generally recommend affected individuals also consider placing a credit freeze with the three major credit bureaus directly, since a one-year monitoring window doesn't limit how long stolen SSNs remain useful to an attacker. Given the specific national-security dimension of this breach, service members should also treat any unexpected contact — texts, calls, or emails referencing personal details that would only be known from this kind of record — with particular caution, since that is exactly the kind of targeted social-engineering attempt analysts are warning this data could enable.
+
+SentinelCores will update this story as the Pentagon's investigation continues and if further detail on the source of the intrusion is disclosed.`},
+
 {id:"bitget-crypto-hack-north-korea-2026",section:"news",category:"cybercrime",
  image:"/assets/images/articles/bitget-crypto-hack-north-korea-2026-hero.jpg",
  imageAlt:"Photo of a padlock resting on a gold physical Bitcoin coin, representing the $351.6 million cryptocurrency exchange hack at Bitget",
