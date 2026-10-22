@@ -98,6 +98,50 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"palo-alto-globalprotect-cve-2026-0257-ransomware-2026",section:"news",category:"ransomware",
+ image:"/assets/images/articles/palo-alto-globalprotect-cve-2026-0257-ransomware-2026-hero.jpg",
+ imageAlt:"Photo of a rusted chain and a newer brass padlock securing a metal gate, representing a months-old security patch that was never applied",
+ images:[{url:"/assets/images/articles/palo-alto-globalprotect-cve-2026-0257-ransomware-2026-logo.svg",alt:"Palo Alto Networks logo",fit:"contain"}],
+ date:"2026-10-22T18:00:00Z",author:"SentinelCores Desk",
+ title:"Ransomware Gangs Are Breaking In Through a Palo Alto GlobalProtect VPN Flaw Patched in May",
+ dek:"Qilin and Inc ransomware operators are exploiting CVE-2026-0257, a GlobalProtect authentication bypass Palo Alto Networks fixed five months ago, to get into hospitals, schools, government agencies, and energy companies. The victims are not hit by a new zero-day; they are organizations that never applied the patch.",
+ excerpt:"Ransomware crews including Qilin and Inc are exploiting CVE-2026-0257, a Palo Alto GlobalProtect VPN authentication bypass patched in May, against healthcare, education, government, and energy targets that never updated.",
+ tags:["Palo Alto Networks","GlobalProtect","CVE-2026-0257","Qilin","Inc Ransomware","VPN Security","Ransomware","Patch Management"],featured:true,trending:true,sourceName:"Help Net Security, Unit 42, ReliaQuest, Rapid7",
+ severity:"critical",status:"Active",cve:["CVE-2026-0257"],
+ keyTakeaways:["CVE-2026-0257 is an authentication bypass in Palo Alto Networks' PAN-OS GlobalProtect that lets a remote, unauthenticated attacker open an unauthorized VPN connection; Palo Alto disclosed and patched it on May 13, 2026","Unit 42 reported on October 19 that the Qilin and Inc ransomware operators are using the flaw for initial access, and ReliaQuest also ties it to Qilin and Settra activity","Targets span healthcare, education, government, and energy; in one Unit 42 case, attackers moved from the VPN gateway into virtualization management systems and disabled security controls on hypervisors","Palo Alto first rated the flaw medium severity, then raised it on May 29 after confirming exploit attempts against unpatched devices, and Rapid7 saw attacks as early as May 17","ReliaQuest warns that patching alone may not remove access gained earlier, and expects exploitation to continue over the next three months"],
+ body:`Ransomware operators are using a Palo Alto Networks VPN flaw that was patched five months ago to break into hospitals, universities, government agencies, and energy companies, according to threat reports published this month. The vulnerability, CVE-2026-0257, is not a new zero-day. The organizations being hit are the ones that never applied a fix that has been available since May.
+
+## What the flaw does
+
+CVE-2026-0257 is an authentication bypass in the GlobalProtect portal and gateway of Palo Alto's PAN-OS firewalls, including both physical and virtual firewalls and Prisma Access. According to Help Net Security's summary of the research, the firewalls rely on cookies without adequate validation or integrity checks, which lets a remote attacker with no credentials bypass security restrictions and establish an unauthorized VPN connection. Once connected, the attacker is effectively inside the corporate network, appearing as a remote worker.
+
+Palo Alto disclosed the vulnerability and shipped fixes on May 13, 2026, initially rating it medium severity. That rating did not last. On May 29, the company updated its advisory to say it had become aware of "limited exploit attempts on unpatched PAN-OS devices without mitigations applied," and raised the severity to high. A secondary source reports a CVSS v4.0 score of 7.8 after the change, and that CISA added the flaw to its Known Exploited Vulnerabilities catalog with a June 1 federal deadline; check the primary advisories to confirm those figures.
+
+[IMAGE:1]
+
+## From scanning to ransomware
+
+The timeline shows a slow escalation. Rapid7 reported attackers targeting local administrator accounts on customer devices on May 17, and a second wave on May 21 in which some attackers reached internal networks. Palo Alto's Unit 42 incident responders began investigating related intrusions in early June, which is why some coverage dates the exploitation to June. On October 19, Unit 42 updated its threat brief to name two ransomware operators, Qilin and Inc, as using the flaw.
+
+"Attackers are leveraging this vulnerability to gain an initial foothold into corporate networks," Andy Piazza, Unit 42's senior director of threat intelligence, said. ReliaQuest separately tracks Qilin and Settra ransomware operations using the same access, and notes that initial access brokers, who sell footholds to other criminals, are also hunting for unpatched systems. Healthcare, education, government, and energy organizations are the sectors named as targets.
+
+## What attackers do after getting in
+
+The activity described in the reports follows a familiar playbook. Attackers use legitimate IT management tools to explore networks and move between machines, and deploy tools to steal credentials and data before launching ransomware. ReliaQuest observed Cobalt Strike, BloodHound, and SharpHound in related activity. ReliaQuest warns that "malicious activity can resemble legitimate remote work and may go undetected."
+
+One Unit 42 case shows how far this can go. The attackers moved from the VPN gateway into the organization's virtualization management infrastructure and disabled security controls on hypervisors, which Unit 42 says let them steal credentials in a way that bypassed endpoint detection software running inside the virtual machines. Attackers have also chained this access with an older flaw in Veeam backup software, CVE-2023-27532, a pairing that targets the backups victims would use to recover.
+
+## Why this keeps happening
+
+The lesson here is less about Palo Alto than about patch management. The fix has been public since May, and exploitation has been documented almost as long, yet ransomware crews are still finding vulnerable gateways five months later. Internet-facing VPN appliances are an attractive target because a single unpatched device gives direct access to the internal network, and because they are easy to find with internet-wide scans. For organizations in healthcare and education, which often run lean IT teams, a gateway that was installed once and never revisited is exactly the kind of gap these groups look for.
+
+## What to do now
+
+ReliaQuest's advice is to upgrade affected GlobalProtect deployments without delay, disable authentication override cookies where they are not needed, end all active GlobalProtect sessions after patching, and investigate unexpected connections, including sessions using the hostname "kali." Check Palo Alto's advisory and Unit 42's threat brief for the fixed PAN-OS versions for your release and for indicators of compromise.
+
+Patching is only the first step. ReliaQuest cautions that "patching alone may not remove access established before remediation," so any organization that ran an unpatched gateway since May should hunt for signs of earlier compromise, such as unfamiliar administrator accounts, new VPN sessions from unexpected locations, and unusual use of remote administration tools. ReliaQuest assesses that exploitation is "highly likely to continue over the next three months."
+
+SentinelCores will update this story as Palo Alto, Unit 42, or CISA publish further guidance.`},
 {id:"php2shell-php-rce-zero-days-2026",section:"news",category:"vulnerabilities",
  image:"/assets/images/articles/php2shell-php-rce-zero-days-2026-hero.jpg",
  imageAlt:"Photo of rows of black server racks with patch panels in a data center, representing the web servers exposed to the PHP2Shell vulnerabilities",
