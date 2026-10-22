@@ -98,6 +98,54 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"shinyhunters-third-arrest-fbi-jobs-portal-2026",section:"news",category:"data-breaches",
+ image:"/assets/images/articles/shinyhunters-fbi-breach-claim-2026-hero.jpg",
+ imageAlt:"Photo of the entrance to the J. Edgar Hoover FBI Building in Washington, D.C., the FBI's headquarters",
+ images:[{url:"/assets/images/articles/qtfy-china-hackers-doj-fbi-seizure-2026-doj-seal.svg",alt:"Official seal of the U.S. Department of Justice",fit:"contain"}],
+ date:"2026-10-22T20:00:00Z",author:"SentinelCores Desk",
+ title:"FBI Arrests Another Suspected ShinyHunters Member in the FBIJobs.gov Breach — The Third Arrest in Weeks",
+ dek:"FBI Director Kash Patel announced on October 9 that agents arrested another co-conspirator of the extortion group ShinyHunters. Anonymous sources say he is a Canadian arrested in Pennsylvania, but the FBI has not named him or disclosed charges. It is the third arrest made public since the group's FBI breach came to light.",
+ excerpt:"The FBI says it arrested another suspected ShinyHunters co-conspirator tied to the FBIJobs.gov breach. The suspect is unnamed and no charges are public; Dutch and Jordanian arrests came earlier.",
+ tags:["ShinyHunters","FBI","FBIJobs.gov","Arrest","Data Breach","Extortion","Cybercrime","Kash Patel"],featured:true,trending:true,sourceName:"BleepingComputer, Nextgov/FCW, The Hacker News, Reuters, CBS News",
+ severity:"high",status:"Under Investigation",
+ keyTakeaways:["FBI Director Kash Patel announced on October 9, 2026 that agents arrested another suspected ShinyHunters co-conspirator, saying the arrest came earlier that week; the FBI has not named the suspect or disclosed charges","The New York Times and CBS News, citing unnamed sources, report the suspect is a Canadian citizen arrested in Pennsylvania; that detail is not officially confirmed","Reuters counts it as the third arrest made public since the breach surfaced, after a 24-year-old in the Netherlands and a suspect reportedly detained in Jordan","The FBI says a contractor failed to apply a security patch on the third-party platform behind FBIjobs.gov, and says it has removed that contractor","ShinyHunters' main spokesperson stopped responding and a new leak site appeared, so the group may still be active; a law enforcement source told CBS that other suspected co-conspirators remain free"],
+ body:`The FBI has arrested another suspected member of the ShinyHunters extortion group, the third arrest made public since the group claimed in September that it had stolen personnel data from the bureau. FBI Director Kash Patel announced the arrest on October 9, 2026, calling the suspect a co-conspirator of the group believed to be responsible for the FBIjobs.gov incident. The FBI has not released the suspect's name or any charges.
+
+This is a follow-up to our September report, [ShinyHunters Claims It Hacked the FBI and Stole Data on Nearly Every Agent](/news/shinyhunters-fbi-breach-claim-2026/), which separated what the group claimed from what journalists had verified.
+
+## What the FBI has confirmed
+
+On the record, the picture is thin. Patel said on X and in a follow-up statement that agents arrested another suspected ShinyHunters co-conspirator earlier in the week, and that the FBI is working to dismantle the group. He did not name the person, describe their role, or say what charges they face.
+
+Everything more specific comes from anonymous sources. The New York Times, citing two people, reported that the suspect is a Canadian man taken into custody in Pennsylvania, and CBS News reported the same nationality. A law enforcement source told CBS the suspect is believed to have been directly involved in the hack, while the Times framed the arrest as being on suspicion of involvement in the theft of FBI data. Some outlets have published a specific name, but with no charging documents public, SentinelCores is not repeating a name that no official source has confirmed.
+
+[IMAGE:1]
+
+## The arrests so far
+
+Reporting from Reuters, CBS News, and Nextgov/FCW lays out a sequence. Details differ slightly between outlets, which we note below.
+
+- **Netherlands:** Dutch police arrested a 24-year-old Amsterdam man in mid-September, about a week before ShinyHunters announced the FBI breach. The FBI described him as an alleged leader of the group, and its cyber chief said he and associates breached more than 140 organizations and collected at least $70 million in extortion payments since last year. Reuters and CBS identified him as Pepijn van der Stap; Dutch police have not named him, and ShinyHunters told The Hacker News he has no association with the group. Outlets differ on whether the arrest became public on September 15 or September 29.
+- **Jordan:** Reuters, citing unnamed sources, reported that a suspect known online as "Rey" was detained and is cooperating with the FBI. Outlets give the date as late September or early October. Jordanian state media confirmed an arrest without a name. It is not known whether the newest arrest resulted from that cooperation.
+- **Pennsylvania:** The arrest announced October 9.
+
+## What was taken, and how
+
+The FBI says the breach hit a platform run by an outside organization and that a contractor failed to implement a security patch. The bureau has not named the platform or vendor, and it says it has removed the contractor. Two sources told Reuters the platform is Oracle PeopleSoft and the vendor is Accenture; Accenture did not answer questions about the contractor.
+
+ShinyHunters claimed 2 to 3 terabytes of data, and claimed a PeopleSoft zero-day, which remains unverified. A Reuters analysis of leaked samples found extensive personal information on FBI employees, details of sensitive job roles, and medical and psychiatric information. A source told CBS an internal FBI notice confirmed hackers obtained employee information. Nextgov/FCW reported that a sample supplied by the group included names, home addresses, phone numbers, and relatives' details, and identified intelligence and surveillance personnel.
+
+## Is the group finished?
+
+Not clearly. BleepingComputer reports that the group's main representative stopped responding and their Telegram account appears deleted, but a new leak site has launched. It is unclear whether that is linked to the arrests. A law enforcement source told CBS that other suspected co-conspirators remain free. ShinyHunters has said it will not publish the FBI data, but data stolen from the bureau could still be sold or passed to others.
+
+## Why it matters
+
+ShinyHunters-linked intrusions have repeatedly started with social engineering and unpatched or misconfigured third-party platforms rather than exotic exploits. The FBI's own explanation, a missed patch at a contractor, fits that pattern. For organizations, the practical points are to verify patch status on vendor-run systems, not only your own, and to train staff against phone-based phishing.
+
+Arrests do not necessarily end the threat. Groups like this are loosely organized, and the stolen data remains in circulation. Current and former FBI employees and job applicants should watch for targeted phishing and identity-theft attempts.
+
+SentinelCores will update this story if the Justice Department unseals charges or confirms the suspect's identity.`},
 {id:"palo-alto-globalprotect-cve-2026-0257-ransomware-2026",section:"news",category:"ransomware",
  image:"/assets/images/articles/palo-alto-globalprotect-cve-2026-0257-ransomware-2026-hero.jpg",
  imageAlt:"Photo of a rusted chain and a newer brass padlock securing a metal gate, representing a months-old security patch that was never applied",
