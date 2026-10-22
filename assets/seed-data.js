@@ -98,6 +98,50 @@ Object.keys(SECTION_CATEGORIES).forEach(function (sec) {
 // (see README) so `image` is left blank and the generated icon/gradient
 // card renders instead.
 var SEED_ARTICLES = [
+{id:"php2shell-php-rce-zero-days-2026",section:"news",category:"vulnerabilities",
+ image:"/assets/images/articles/php2shell-php-rce-zero-days-2026-hero.jpg",
+ imageAlt:"Photo of rows of black server racks with patch panels in a data center, representing the web servers exposed to the PHP2Shell vulnerabilities",
+ images:[{url:"/assets/images/articles/php2shell-php-rce-zero-days-2026-logo.svg",alt:"PHP programming language logo",fit:"contain"}],
+ date:"2026-10-22T14:00:00Z",author:"SentinelCores Desk",
+ title:"PHP2Shell: Critical PHP Flaws Leaked Before Patches, and Attackers Are Already Probing Servers",
+ dek:"Two critical remote-code-execution flaws in the PHP engine itself, tracked as CVE-2026-109618 and CVE-2026-109619, leaked a day before their planned disclosure. PHP shipped emergency fixes on October 21, and security firms reported exploitation attempts within hours. The flaws affect nearly every PHP version back to 5.4.",
+ excerpt:"Two critical PHP flaws (CVE-2026-109618 and CVE-2026-109619), dubbed PHP2Shell, leaked before patches existed. Emergency fixes are out, exploitation attempts are reported, and CISA says to patch or take PHP systems offline.",
+ tags:["PHP","PHP2Shell","CVE-2026-109618","CVE-2026-109619","Remote Code Execution","WordPress","Zero-Day","CISA"],featured:true,trending:true,sourceName:"CISA, Wiz, The Hacker News, BleepingComputer",
+ severity:"critical",status:"Active",cve:["CVE-2026-109618","CVE-2026-109619"],
+ keyTakeaways:["Two critical flaws in PHP's core engine, CVE-2026-109618 and CVE-2026-109619 (together called PHP2Shell), can let an unauthenticated remote attacker run code on a web server; both are rated CVSS v4.0 9.2","Details and a working proof of concept leaked on October 20, a day before the planned disclosure, and PHP moved its patch release up to October 21","Fixes are in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; PHP 8.1 and older no longer get project updates, so those servers need a vendor backport or an upgrade","Cloudflare and watchTowr reported exploitation attempts on October 21, but no source has confirmed a successful break-in of a specific server, and CISA said it had not observed exploitation at the time of its alert","Because the bugs are in PHP itself, applications with secure code, including WordPress, Drupal and Joomla, can still be exposed until the server's PHP is updated"],
+ body:`Two critical vulnerabilities in the PHP engine itself leaked online a day before their planned disclosure, forcing the PHP project to ship emergency patches on October 21, 2026 while security firms reported attackers already probing for vulnerable servers. The flaws, tracked as CVE-2026-109618 and CVE-2026-109619 and nicknamed PHP2Shell, can allow an unauthenticated attacker to run code on a web server. PHP powers roughly 70% of websites, so the exposure reaches well beyond developers.
+
+## What the flaws are
+
+Both bugs are rated 9.2 out of 10 under CVSS v4.0. They sit in PHP's core runtime rather than in any single application, which is the central problem: a website whose own code is flawless can still be exposed if the PHP underneath it is unpatched. Researchers describe memory-safety problems that can enable remote code execution without logging in, and in some cases let an attacker read memory from PHP worker processes, which can hold passwords, session tokens, API keys, and certificates belonging to other visitors' requests.
+
+The affected code is more than a decade old. Reporting says nearly every PHP version back to 5.4 is vulnerable, across every way PHP serves web traffic, including PHP-FPM, Apache mod_php, php-cgi, FrankenPHP, and LiteSpeed. PHP's own advisory rates Apache mod_php as the highest risk.
+
+[IMAGE:1]
+
+## How the leak unfolded
+
+Wiz Research reported the issues to the PHP security team on August 24, 2026, and Wiz says frontier AI models helped find the bugs and validate the fix. Calif and OpenAI's Codex Security team also reported them, and the PHP team worked on the fix with Google's Gemini team. Disclosure was planned for October 22. On October 20, a post claimed the flaws would be disclosed that day, and later that evening Calif accidentally posted a video of its working proof of concept. PHP published an advance notice and pulled its release forward to October 21.
+
+Defenders moved fast. Cloudflare switched on firewall protections by default at 03:02 UTC on October 21, hours before the patch, and Chainguard published patched container images about six hours before the official release. watchTowr reported no exploitation in the wild at 11:26 UTC, but by 14:19 UTC, shortly after patches shipped, it reported active exploitation attempts against both flaws. Cloudflare also said attackers altered their payloads to try to evade its new rules.
+
+## What is and is not confirmed
+
+Attackers are clearly trying. What is not yet confirmed is a successful compromise of a specific server: no source has publicly documented one, CISA said it had not observed exploitation when it published its alert, and neither CVE was in CISA's Known Exploited Vulnerabilities catalog at the time of writing. Some organizations took services offline as a precaution, including BambooHR and several Dutch government and education sites. This is best read as a race between patching and automated scanning, not a confirmed mass compromise.
+
+## What to do now
+
+Update PHP. The fixed releases are 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Distribution packages may carry the fix under an older-looking version number, so check the changelog for the CVE IDs. Restart Apache, PHP-FPM, and any long-running PHP workers afterward.
+
+CISA's alert adds that PHP is often embedded in other software, so many organizations do not know every place it runs, and recommends inventorying all PHP systems and patching internet-facing ones first. Organizations that cannot patch immediately, or that run PHP 8.1 or earlier, should take PHP-based systems offline until they can be updated; the UK's NCSC gave similar advice. PHP 8.1 and earlier no longer receive project updates, though backports exist for 7.4, 8.0, and 8.1. A web application firewall can reduce risk in the meantime, and vendors including Cloudflare, Fastly, and Vercel published mitigations. Partial measures such as lower memory and POST size limits or disabling session upload progress help, but PHP says patching is the only complete fix.
+
+After patching, look for signs of earlier compromise: unusual multipart requests, repeated HTTP 500 errors, unusually large PHPSESSID cookies, unexplained worker restarts, and PHP worker processes launching shells or downloading tools.
+
+## Why it matters
+
+WordPress, Drupal, and Joomla all run on PHP, and Wiz demonstrated its attack chain against current container images of all three. For site owners on shared or managed hosting, the fix depends on the host updating PHP, so check with your provider rather than assuming it is done.
+
+SentinelCores will update this story if CISA adds the flaws to its exploited-vulnerabilities catalog or a confirmed compromise is reported.`},
 {id:"pentagon-dmdc-data-breach-2026",section:"news",category:"data-breaches",
  image:"/assets/images/articles/pentagon-dmdc-data-breach-2026-hero.jpg",
  imageAlt:"Aerial photo of the Pentagon in Washington, D.C., headquarters of the U.S. Department of Defense, whose Defense Manpower Data Center suffered a data breach affecting over 3 million people",
